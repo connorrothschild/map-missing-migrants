@@ -11,14 +11,13 @@ cr::set_cr_theme()
 data <- read.csv("../data/data.csv")
 data <- janitor::clean_names(data)
 
-data <- data %>% 
-  mutate(total_dead_and_missing = as.numeric(total_dead_and_missing),
-         minimum_estimated_number_of_missing = as.numeric(minimum_estimated_number_of_missing))
+sum(data$total_dead_and_missing[data$reported_year == 2018])
+## THIS NUMBER (above) corresponds with the data presented in the MMP homepage.
+## It seems fair to use this statistic (total_dead_and_missing) for calculations
 
-sum(data$total_dead_and_missing)
-sum(data$minimum_estimated_number_of_missing, na.rm = TRUE)
-
-most_deadly_incident <- max(data$minimum_estimated_number_of_missing)
+## it is unclear when the two stats below are used by MMP
+sum(data$minimum_estimated_number_of_missing[data$reported_year == 2019], na.rm = TRUE)
+sum(data$number_dead[data$reported_year == 2019], na.rm = TRUE)
 
 data %>% 
   group_by(region_of_incident) %>%
@@ -29,6 +28,7 @@ data %>%
   geom_col() +
   coord_flip() +
   labs(title = "Where do migrants go missing?",
+       subtitle = "Regions of incident",
        y = "Number dead or missing",
        x = element_blank()) +
   cr::fix_bars()
@@ -42,6 +42,7 @@ data %>%
   geom_col() +
   coord_flip() +
   labs(title = "Where do migrants go missing?",
+       subtitle = "Migration routes",
        y = "Number dead or missing",
        x = element_blank()) +
   cr::fix_bars()
@@ -55,9 +56,23 @@ data %>%
   geom_col() +
   scale_x_continuous(breaks = c(2014:2019)) +
   labs(title = "Changes over time",
+       subtitle = "Dead and missing",
        y = "Number dead or missing",
        x = element_blank()) +
   cr::fix_bars()
+
+# data %>% 
+#   filter(reported_year != 2020) %>% 
+#   group_by(reported_year) %>%
+#   summarise(number_dead = sum(number_dead, na.rm = TRUE)) %>% 
+#   ggplot(aes(x=reported_year,y=number_dead)) +
+#   geom_col() +
+#   scale_x_continuous(breaks = c(2014:2019)) +
+#   labs(title = "Changes over time",
+#        subtitle = "Deaths only",
+#        y = "Number dead",
+#        x = element_blank()) +
+#   cr::fix_bars()
 
 data$reported_month <- factor(data$reported_month, levels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))
 
@@ -116,3 +131,36 @@ data %>%
        y = "Number dead or missing",
        x = element_blank()) +
   cr::fix_bars()
+
+# data %>% 
+#   group_by(region_of_incident) %>%
+#   summarise(number_dead = sum(number_dead,na.rm=TRUE)) %>% 
+#   mutate(region_of_incident = reorder(region_of_incident, number_dead)) %>% 
+#   ggplot(aes(x=region_of_incident,y=number_dead)) +
+#   geom_col() +
+#   coord_flip() +
+#   labs(title = "Where do migrants die?",
+#        y = "Number dead",
+#        x = element_blank()) +
+#   cr::fix_bars()
+# 
+# data %>% 
+#   group_by(region_of_incident) %>%
+#   summarise(number_dead = sum(number_dead,na.rm=TRUE)) %>% 
+#   arrange(desc(number_dead))
+
+data %>% 
+  group_by(region_of_incident) %>%
+  summarise(total_dead_and_missing = sum(total_dead_and_missing,na.rm=TRUE)) %>% 
+  arrange(desc(total_dead_and_missing))
+
+deadliest_incident <- data %>% 
+  filter(total_dead_and_missing == max(total_dead_and_missing))
+
+deadliest_incident
+
+data %>% 
+  filter(region_of_incident == "US-Mexico Border") %>% 
+  group_by(reported_year) %>% 
+  summarise(total_dead_and_missing = sum(total_dead_and_missing,na.rm=TRUE))
+  
