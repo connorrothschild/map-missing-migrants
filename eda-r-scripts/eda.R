@@ -160,7 +160,26 @@ deadliest_incident <- data %>%
 deadliest_incident
 
 data %>% 
-  filter(region_of_incident == "US-Mexico Border") %>% 
+  filter(reported_year != 2020 & region_of_incident == "US-Mexico Border") %>% 
   group_by(reported_year) %>% 
-  summarise(total_dead_and_missing = sum(total_dead_and_missing,na.rm=TRUE))
-  
+  summarise(total_dead_and_missing = sum(total_dead_and_missing,na.rm=TRUE)) %>% 
+  ggplot(aes(x = reported_year, y = total_dead_and_missing)) +
+  geom_col(fill = "#A80100") +
+  labs(x = element_blank(), y = "Number dead or missing",
+       title = "Deaths at the US-Mexico Border") +
+  scale_x_continuous(breaks = c(2014:2019)) +
+  cr::fix_bars() +
+  theme(
+    plot.background = element_rect(fill = "black"),
+    panel.background = element_rect(fill = "black",
+                                    colour = "black",
+                                    size = 0.5, linetype = "solid"),
+    panel.grid.major = element_line(size = 0, linetype = 'solid',
+                                    colour = "black"), 
+    panel.grid.minor = element_line(size = 0, linetype = 'solid',
+                                    colour = "black"),
+    title = element_text(colour = "white"),
+    axis.text = element_text(colour = "white"),
+    axis.line = element_line(colour = "white"),
+    axis.ticks = element_line(colour = "white")
+  )  

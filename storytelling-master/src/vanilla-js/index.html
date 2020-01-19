@@ -2,20 +2,27 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Scrollytelling Template</title>
+    <title>Mapping Missing Migrants | Connor Rothschild</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
     <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
     <script src="https://unpkg.com/scrollama"></script>
     <style>
+
+    	@import url('https://rsms.me/inter/inter.css');
+		html { font-family: 'Inter', sans-serif; }
+		@supports (font-variation-settings: normal) {
+		  html { font-family: 'Inter var', sans-serif; }
+		}
+
         body {
             margin:0; 
             padding:0; 
-            font-family: sans-serif;
+            font-family: "Inter", sans-serif;
         }
         a, a:hover, a:visited {
-            color: #0071bc;
+            color: #A80100;
         }
         #map {
             top:0; 
@@ -62,7 +69,7 @@
         }
         .dark {
             color: #fafafa;
-            background-color: #444;
+            background-color: black;
         }
         .step {
             padding-bottom: 50vh;

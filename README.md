@@ -32,11 +32,11 @@ The data suggests that the Mediterranean is the site where the majority of migra
 15 North America                           2
 ```
 
-Of the 34,688 people who died or went missing on their journeys, 55.6% of them died in the Mediterranean.
+Of the 34,688 people who have died or went missing since 2014, over 55% of them were lost in the Mediterranean.
 
 ### US-Mexico Border
 
-A large number of migrants have also died near the US-Mexico border. In total, 2,405 migrants have died or gone missing in this area, making it the third most dangerous region in the world for migrants. It is only surpassed by the Mediterranean and North Africa.
+A large number of migrants have also died near the US-Mexico border. In total, 2,405 migrants have died or gone missing in this area since 2014, making it the third most dangerous region in the world for migrants. It is only surpassed by the Mediterranean and North Africa.
 
 This region is worth exploring because it has experienced an upsurge in both migration and migrant deaths in the past few years. Since 2014 (the first year data was collected), the region has observed a 62% increase in migrant deaths. 
 
@@ -64,3 +64,11 @@ One of these areas is southern Arizona. Cities such as Tucson and Sierra Vista w
 ### Brooks County
 
 The other is in the Southeastern part of Texas. There are deaths scattered throughout, but the greatest concentration is in one place: Brooks County. Over <a target = '_blank' href = 'https://www.nytimes.com/interactive/2017/05/04/us/texas-border-migrants-dead-bodies.html'>500 migrants' remains</a> have been found in this county since 2009.
+
+## Different Causes
+
+There's also something peculiar about these two places: unknown causes of death. <br>Although most recorded deaths share similar causes, such as drowning, these deaths in Texas and Arizona follow different paths.<br>In this view, <br><span style = 'color:#0FA800;'>&#9673;</span> represent deaths from hyperthermia <br><span style = 'color:#1800E0;'>&#9673;</span> represent deaths from drowning <br><span style = 'color:white;'>&#9673;</span> represent unknown deaths <br><span style = 'color:#A80100;'>&#9673;</span> represent all other causes
+
+
+
+While the rest of the world tells a tragic story, the story of the U.S. is both tragic and mysterious. How can a nation as developed as ours fail its migrants so severely?
