@@ -182,4 +182,4 @@ data %>%
     axis.text = element_text(colour = "white"),
     axis.line = element_line(colour = "white"),
     axis.ticks = element_line(colour = "white")
-  )  
+    )

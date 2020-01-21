@@ -4,13 +4,13 @@ var config = {
     showMarkers: false,
     theme: 'dark',
     alignment: 'left',
-    title: 'Since 2014, over 34,000 migrants have died on their journeys to a better life.',
+    title: 'Since 2014, over 34,000 migrants have died or went missing on their journeys to a better life.',
     subtitle: 'Where?',
     byline: 'Mapping Missing Migrants. By Connor Rothschild',
     footer: 'Source: <a target = "_blank" href = "https://missingmigrants.iom.int">The Missing Migrants Project</a>',
     chapters: [
         {
-            id: 'slug-style-id',
+            id: 'intro-id',
             // title: 'An overview',
             // image: './path/to/image/source.png',
             description: 'The world is facing a migration crisis. In an era of forced exodus and displacement, host governments in developed countries have increasingly turned to turning <em>away</em> migrants. <br>This combination creates a treacherous path for international migrants. Since 2014, nearly 35,000 migrants have died or went missing in their search for a better life.',
@@ -49,9 +49,9 @@ var config = {
         },
         {
             id: 'mediterranean-focus',
-            title: 'The deadliest single incident in the last six years:',
-            // image: './path/to/image/source.png',
-            description: 'One incident, on April 18, 2015, took a higher-than-usual toll, when 750 migrants died of drowning and an additional 252 went missing somewhere between Lampedusa and Libya.<br>In total, 1,022 migrants died or went missing.',
+            title: 'The deadliest single incident in the last six years',
+            image: './images/two-traffickers.jpg',
+            description: 'On April 18, 2015, two human traffickers intentionally capsized a migrant boat somewhere near the coast of Libya. 750 migrants died of drowning and an additional 252 went missing somewhere between Lampedusa and Libya.<br>In total, 1,022 migrants died or went missing—only 27 survived.',
             location: {
                 center: [12.350,34.65],
                 zoom: 5,
@@ -87,7 +87,7 @@ var config = {
             id: 'us-mexico',
             title: 'Closer to Home',
             // image: './path/to/image/source.png',
-            description: 'A large number of migrants have also died near the US-Mexico border. Since 2014, 2,405 migrants have died or gone missing in this area, making it the third most dangerous region in the world for migrants. It is only surpassed by the Mediterranean and North Africa.',
+            description: 'A large number of migrants have also died near the US-Mexico border. Since 2014, over 2,400 migrants have died or gone missing in this area, making it the third most dangerous region in the world for migrants. It is only surpassed by the Mediterranean and North Africa.',
             location: {
                 center: [-110.76662, 20.836],
                 zoom: 2.66,
@@ -135,24 +135,14 @@ var config = {
                 pitch: 0,
                 bearing: 0
             },
-            onChapterEnter: [
-                // {
-                //     layer: 'heatmap-deaths',
-                //     opacity: 1,
-                // }
-            ],
-            onChapterExit: [
-                // {
-                //     layer: 'heatmap-deaths',
-                //     opacity: 0
-                // }
-            ]
+            onChapterEnter: [],
+            onChapterExit: []
         },
         {
             id: 'us-mexico-tucson',
             title: 'Southern Arizona',
             // image: './path/to/image/source.png',
-            description: "One of these areas is southern Arizona. Cities such as Tucson and Sierra Vista witness much migration from the US-Mexico border, and much of it leads to treacherous outcomes. <br>In 2018, the remains of 127 migrants were <a target= '_blank' href = 'https://www.azcentral.com/story/news/politics/border-issues/2019/01/16/remains-127-dead-migrants-recovered-southern-arizona-2018/2575080002/'>given to the Pima County Medical Examiner's Office</a>.",
+            description: "One of these areas is southern Arizona. Cities such as Tucson and Sierra Vista witness much migration from the US-Mexico border, and much of it leads to treacherous outcomes. Independent NGOs have <a target = '_blank' href = 'https://humaneborders.org/wp-content/uploads/deathmapcumulative_poster_2018.pdf'>estimated that</a>, since 1999, over 3300 migrants have died while crossing the Arizona border. <br>The largest concentration is in Pima County. In 2018 alone, the remains of 127 migrants were <a target= '_blank' href = 'https://www.azcentral.com/story/news/politics/border-issues/2019/01/16/remains-127-dead-migrants-recovered-southern-arizona-2018/2575080002/'>given to the Pima County Medical Examiner's Office</a>.",
             location: {
                 center: [-113.439, 32.031],
                 zoom: 6,
@@ -166,7 +156,39 @@ var config = {
             id: 'us-mexico-brooks-county',
             title: 'Brooks County',
             // image: './path/to/image/source.png',
-            description: "The other is in the Southeastern part of Texas. There are deaths scattered throughout, but the greatest concentration is in one place: Brooks County. <br>Over <a target = '_blank' href = 'https://www.nytimes.com/interactive/2017/05/04/us/texas-border-migrants-dead-bodies.html'>500 migrants' remains</a> have been found in this county since 2009.",
+            description: "The other area of focuis is the Southeastern part of Texas. There are deaths scattered throughout, but the greatest concentration is in one place: Brooks County. <br>Over <a target = '_blank' href = 'https://www.nytimes.com/2019/04/18/us/mexico-border-deaths.html'>640 migrants' remains</a> have been found in this county since 2009.",
+            location: {
+                center: [-99.530, 26.919],
+                zoom: 6.23,
+                pitch: 0,
+                bearing: 0
+            },
+            onChapterEnter: [
+                {
+                    layer: 'brooks-county-shape',
+                    opacity: .7
+                },
+                {
+                    layer: 'brooks-county-text',
+                    opacity: 1
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'brooks-county-shape',
+                    opacity: 0
+                },
+                {
+                    layer: 'brooks-county-text',
+                    opacity: 0
+                }
+            ]
+        },
+        {
+            id: 'us-mexico-brooks-county-fraction',
+            // title: 'Brooks County',
+            // image: './path/to/image/source.png',
+            description: "If these dead or missing migrants were residents of Brooks County, they would make up 8.9% of its population.",
             location: {
                 center: [-99.530, 26.919],
                 zoom: 6.23,
@@ -198,7 +220,7 @@ var config = {
             id: 'known-and-unknown',
             title: 'Known and Unknown',
             // image: './path/to/image/source.png',
-            description: "There's also something peculiar about these two places: unknown causes of death. <br>Although most recorded deaths share similar causes, such as drowning, these deaths in Texas and Arizona follow different paths.<br><br>In this view, <br><span style = 'color:#0FA800;'>&#9673;</span> represent deaths from hyperthermia <br><span style = 'color:#1800E0;'>&#9673;</span> represent deaths from drowning <br><span style = 'color:white;'>&#9673;</span> represent unknown deaths <br><span style = 'color:#A80100;'>&#9673;</span> represent all other causes",
+            description: "There's also something peculiar about these two places: unknown causes of death. <br>Although most recorded deaths share similar causes, such as drowning, these deaths in Texas and Arizona follow different paths.<hr>In this view, <br><span style = 'color:#0FA800;'>&#9673;</span> represent deaths from hyperthermia <br><span style = 'color:#1800E0;'>&#9673;</span> represent deaths from drowning <br><span style = 'color:white;'>&#9673;</span> represent unknown deaths <br><span style = 'color:#A80100;'>&#9673;</span> represent all other causes",
             location: {
                 center: [-112.400, 27.710],
                 zoom: 4.67,
@@ -206,6 +228,10 @@ var config = {
                 bearing: 0
             },
             onChapterEnter: [
+                {
+                    layer: 'overview-circles',
+                    opacity: 1,
+                },
                 {
                     layer: 'known-and-unknown',
                     opacity: 1,
@@ -230,8 +256,12 @@ var config = {
             },
             onChapterEnter: [
                 {
+                    layer: 'overview-circles',
+                    opacity: .51,
+                },
+                {
                     layer: 'known-and-unknown',
-                    opacity: 1,
+                    opacity: .51,
                 }
             ],
             onChapterExit: [

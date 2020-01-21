@@ -63,7 +63,9 @@ One of these areas is southern Arizona. Cities such as Tucson and Sierra Vista w
 
 ### Brooks County
 
-The other is in the Southeastern part of Texas. There are deaths scattered throughout, but the greatest concentration is in one place: Brooks County. Over <a target = '_blank' href = 'https://www.nytimes.com/interactive/2017/05/04/us/texas-border-migrants-dead-bodies.html'>500 migrants' remains</a> have been found in this county since 2009.
+The other is in the Southeastern part of Texas. There are deaths scattered throughout, but the greatest concentration is in one place: Brooks County. Over <a target = '_blank' href = 'https://www.nytimes.com/2019/04/18/us/mexico-border-deaths.html'>642 migrants' remains</a> have been found in this county since 2009. 
+
+If these dead or missing migrants were residents of Brooks County, they would make up 8.9% of its population.
 
 ## Different Causes
 
