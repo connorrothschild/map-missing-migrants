@@ -1,5 +1,5 @@
 var config = {
-    style: 'mapbox://styles/connorrothschild/ck5ighe0z0pog1ilkwzpn17b7',
+    style: 'mapbox://styles/connorrothschild/ck5ighe0z0pog1ilkwzpn17b7/draft',
     accessToken: 'pk.eyJ1IjoiY29ubm9ycm90aHNjaGlsZCIsImEiOiJjazVpZTN5ZXAwZG1mM2ptbnowa3I4ZW4yIn0.vLvH5zQVcMV3ArgDoqNPYA',
     showMarkers: false,
     theme: 'dark',
@@ -7,7 +7,7 @@ var config = {
     title: 'Since 2014, over 34,000 migrants have died or went missing on their journeys to a better life.',
     subtitle: 'Where?',
     byline: 'Mapping Missing Migrants. By Connor Rothschild',
-    footer: 'Source: <a target = "_blank" href = "https://missingmigrants.iom.int">The Missing Migrants Project</a>',
+    footer: 'Source: <a target = "_blank" href = "https://missingmigrants.iom.int">The Missing Migrants Project</a><br>Design: <a target = "_blank" href = "https://connorrothschild.github.io/">Connor Rothschild</a>',
     chapters: [
         {
             id: 'intro-id',
@@ -26,7 +26,63 @@ var config = {
                     opacity: .51
                 }
             ],
+            onChapterExit: [
+                {
+                    layer: 'overview-circles',
+                    opacity: 0
+                }
+            ]
+        },
+        {
+            id: 'circles-2014',
+            // title: 'An overview',
+            // image: './path/to/image/source.png',
+            description: 'The data stretches back to 2014, when 5,289 migrants died or went missing.',
+            location: {
+                center: [-10.098,45.402],
+                zoom: 1.5,
+                pitch: 0,
+                bearing: 0
+            },
+            onChapterEnter: [
+                // {
+                //     layer: 'overview-circles',
+                //     opacity: 0
+                // },
+                {
+                    layer: 'circles-2014',
+                    opacity: 1
+                }
+            ],
             onChapterExit: []
+        },
+        {
+            id: 'circles-2019',
+            // title: 'An overview',
+            // image: './path/to/image/source.png',
+            description: 'The most recent complete data is from 2019. As these <span style = "color:#0010F0;">&#9673;</span> circles show, instances of dead or missing migrants are mostly concentrated in the same place. <br>Thankfully, these deaths are becoming slightly less frequent; in 2019, roughly, 3,400 migrants were found dead or missing.',
+            location: {
+                center: [-10.098,45.402],
+                zoom: 1.5,
+                pitch: 0,
+                bearing: 0
+            },
+            onChapterEnter: [
+                {
+                    layer: 'circles-2019',
+                    opacity: 1
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'circles-2019',
+                    opacity: 0
+                },
+                {
+                    layer: 'circles-2014',
+                    opacity: 0
+                }
+            ]
         },
         {
             id: 'mediterranean',
@@ -40,12 +96,25 @@ var config = {
                 bearing: 0
         },
             onChapterEnter: [
-                // {
-                //     layer: 'overview-circles',
-                //     opacity: .51
-                // },
+                {
+                    layer: 'country-label',
+                    opacity: 1
+                },
+                {
+                    layer: 'overview-circles',
+                    opacity: .51
+                },
             ],
-            onChapterExit: []
+            onChapterExit: [
+                {
+                    layer: 'overview-circles',
+                    opacity: 0
+                },
+                {
+                    layer: 'country-label',
+                    opacity: 0
+                }
+            ]
         },
         {
             id: 'mediterranean-focus',
@@ -59,6 +128,10 @@ var config = {
                 bearing: 0
         },
             onChapterEnter: [
+                {
+                    layer: 'country-label',
+                    opacity: 1
+                },
                 {   
                     layer: 'overview-circles',
                     opacity: .3
@@ -66,17 +139,25 @@ var config = {
                 {
                     layer: 'deadliest-incident-focus',
                     opacity: .9
+                },
+                {
+                    layer: 'deadliest-incident-text',
+                    opacity: 1
                 }
             ],
             onChapterExit: [
+                {
+                    layer: 'country-label',
+                    opacity: 0
+                },
                 {   
                     layer: 'overview-circles',
                     opacity: .51
                 },                
-                // {
-                //     layer: 'deadliest-incident-background',
-                //     opacity: 0
-                // },
+                {
+                    layer: 'deadliest-incident-text',
+                    opacity: 0
+                },
                 {
                     layer: 'deadliest-incident-focus',
                     opacity: 0
@@ -94,8 +175,18 @@ var config = {
                 pitch: 0,
                 bearing: 0
             },
-            onChapterEnter: [],
-            onChapterExit: []
+            onChapterEnter: [
+                {
+                    layer: 'country-label',
+                    opacity: 1
+                }, 
+            ],
+            onChapterExit: [
+                {
+                    layer: 'country-label',
+                    opacity: 0
+                }, 
+            ]
         },
         {
             id: 'us-mexico-over-time',
@@ -107,8 +198,18 @@ var config = {
                 pitch: 0,
                 bearing: 0
             },
-            onChapterEnter: [],
-            onChapterExit: []
+            onChapterEnter: [
+                {
+                    layer: 'country-label',
+                    opacity: 1
+                }, 
+            ],
+            onChapterExit: [
+                {
+                    layer: 'country-label',
+                    opacity: 0
+                }, 
+            ]
         },
         {
             id: 'us-mexico-two-cities',
@@ -121,8 +222,18 @@ var config = {
                 pitch: 0,
                 bearing: 0
             },
-            onChapterEnter: [],
-            onChapterExit: []
+            onChapterEnter: [
+                {
+                    layer: 'country-label',
+                    opacity: 1
+                }, 
+            ],
+            onChapterExit: [
+                {
+                    layer: 'country-label',
+                    opacity: 0
+                }, 
+            ]
         },
         {
             id: 'us-mexico-two-cities',
@@ -149,14 +260,40 @@ var config = {
                 pitch: 0,
                 bearing: 0
             },
-            onChapterEnter: [],
-            onChapterExit: []
+            onChapterEnter: [
+                {
+                    layer: 'state-label',
+                    opacity: 1
+                }, 
+                {
+                    layer: 'pima-county-shape',
+                    opacity: .7
+                },
+                {
+                    layer: 'pima-county-text',
+                    opacity: 1
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'state-label',
+                    opacity: 0
+                }, 
+                {
+                    layer: 'pima-county-shape',
+                    opacity: 0
+                },
+                {
+                    layer: 'pima-county-text',
+                    opacity: 0
+                }
+            ]
         },
         {
             id: 'us-mexico-brooks-county',
             title: 'Brooks County',
             // image: './path/to/image/source.png',
-            description: "The other area of focuis is the Southeastern part of Texas. There are deaths scattered throughout, but the greatest concentration is in one place: Brooks County. <br>Over <a target = '_blank' href = 'https://www.nytimes.com/2019/04/18/us/mexico-border-deaths.html'>640 migrants' remains</a> have been found in this county since 2009.",
+            description: "The other area of focus is the Southeastern part of Texas. There are deaths scattered throughout, but the greatest concentration is in one place: Brooks County. <br>Over <a target = '_blank' href = 'https://www.nytimes.com/2019/04/18/us/mexico-border-deaths.html'>640 migrants' remains</a> have been found in this county since 2009.",
             location: {
                 center: [-99.530, 26.919],
                 zoom: 6.23,
@@ -164,6 +301,10 @@ var config = {
                 bearing: 0
             },
             onChapterEnter: [
+                {
+                    layer: 'state-label',
+                    opacity: 1
+                }, 
                 {
                     layer: 'brooks-county-shape',
                     opacity: .7
@@ -174,6 +315,10 @@ var config = {
                 }
             ],
             onChapterExit: [
+                {
+                    layer: 'state-label',
+                    opacity: 0
+                }, 
                 {
                     layer: 'brooks-county-shape',
                     opacity: 0
@@ -197,6 +342,10 @@ var config = {
             },
             onChapterEnter: [
                 {
+                    layer: 'state-label',
+                    opacity: 1
+                }, 
+                {
                     layer: 'brooks-county-shape',
                     opacity: .7
                 },
@@ -206,6 +355,10 @@ var config = {
                 }
             ],
             onChapterExit: [
+                {
+                    layer: 'state-label',
+                    opacity: 0
+                }, 
                 {
                     layer: 'brooks-county-shape',
                     opacity: 0
@@ -229,6 +382,10 @@ var config = {
             },
             onChapterEnter: [
                 {
+                    layer: 'state-label',
+                    opacity: 1
+                }, 
+                {
                     layer: 'overview-circles',
                     opacity: 1,
                 },
@@ -238,6 +395,10 @@ var config = {
                 }
             ],
             onChapterExit: [
+                {
+                    layer: 'state-label',
+                    opacity: 0
+                }, 
                 {
                     layer: 'known-and-unknown',
                     opacity: 0,
@@ -269,6 +430,35 @@ var config = {
                     layer: 'known-and-unknown',
                     opacity: 0
                 }
+            ]
+        },
+
+        {
+            id: 'final',
+            title: 'Since 2014, over 34,000 migrants have died or went missing on their journey to a better life.',
+            // image: './path/to/image/source.png',
+            description: "<p>What can you do to help?<br>The following organizations fight for immigrants&#39; rights in the U.S. and abroad:<br></p><ul><li><a target = '_blank' href='https://asylumadvocacy.org/'>Asylum Seeker Advocacy Project</a></li><li><a target = '_blank' href='https://www.raicestexas.org/'>RAICES</a></li><li><a target = '_blank' href='https://las-americas.org/'>Las Americas Immigrant Advocacy Center</a></li><li><a target = '_blank' href='https://www.refugeesinternational.org/'>Refugees International</a></li></ul>",
+            location: {
+                center: [-24.094,2.358],
+                zoom: 1.5,
+                pitch: 0,
+                bearing: 0
+            },
+            onChapterEnter: [
+                {
+                    layer: 'overview-circles',
+                    opacity: .51,
+                },
+                {
+                    layer: 'known-and-unknown',
+                    opacity: 0,
+                }
+            ],
+            onChapterExit: [
+                // {
+                //     layer: 'known-and-unknown',
+                //     opacity: 0
+                // }
             ]
         },
     ]
