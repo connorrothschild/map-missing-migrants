@@ -97,7 +97,7 @@ var config = {
             id: 'circles-2019',
             // title: 'An overview',
             // image: './path/to/image/source.png',
-            description: 'In the five years since the refugee crisis captured international attention, some nations have made strides to create a safer and more welcoming climate for migrants. In Canada, the intended destination for Alan Kurdi and his family, refugee policy became a key issue in their 2015 election. <br><br>As these <span style = "color:#0010F0;">&#9673;</span> circles from 2019 show, instances of dead or missing migrants are mostly concentrated in the same place. <br>Thankfully, these deaths are becoming slightly less frequent; in 2019, roughly, 3,400 migrants were found dead or missing.',
+            description: 'In the five years since the refugee crisis captured international attention, some nations have made strides to create a safer and more welcoming climate for migrants. Fefugee policy became a key issue in the 2015 election of Canada, the intended destination for Alan Kurdi and his family. <br><br>As these <span style = "color:#0010F0;">&#9673;</span> circles from 2019 show, instances of dead or missing migrants are mostly concentrated in the same place. <br>Thankfully, these deaths are becoming slightly less frequent; in 2019, roughly, 3,400 migrants were found dead or missing.',
             location: {
                 center: [-10.098,45.402],
                 zoom: 1.5,
@@ -460,7 +460,7 @@ var config = {
         },
         {
             id: 'known-and-unknown',
-            title: 'Known and Unknown',
+            title: 'Known and unknown',
             // image: './path/to/image/source.png',
             description: "There's also something peculiar about these two places: unknown causes of death. <br>Although most recorded deaths share similar causes, such as drowning, these deaths in Texas and Arizona follow different paths.<hr>In this view, <br><span style = 'color:#0FA800;'>&#9673;</span> represent deaths from hyperthermia <br><span style = 'color:#1800E0;'>&#9673;</span> represent deaths from drowning <br><span style = 'color:white;'>&#9673;</span> represent unknown deaths <br><span style = 'color:#A80100;'>&#9673;</span> represent all other causes",
             location: {
