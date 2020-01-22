@@ -250,6 +250,14 @@ var config = {
                 {
                     layer: 'deadliest-incident-focus',
                     opacity: 0
+                },
+                {
+                    layer: 'italy-focus',
+                    opacity: 0
+                },
+                {
+                    layer: 'italy-text',
+                    opacity: 0
                 }
             ]
         },
