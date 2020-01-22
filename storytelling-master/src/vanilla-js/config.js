@@ -15,7 +15,7 @@ var config = {
             // image: './path/to/image/source.png',
             description: 'The world is facing a migration crisis. In an era of forced exodus and displacement, host governments in developed countries have increasingly turned to turning <em>away</em> migrants. <br>This combination creates a treacherous path for international migrants. Since 2014, nearly 35,000 migrants have died or went missing in their search for a better life.',
             location: {
-                center: [-10.098,45.402],
+                center: [-71.374,26.948],
                 zoom: 1.5,
                 pitch: 0,
                 bearing: 0
@@ -39,7 +39,7 @@ var config = {
             // image: './path/to/image/source.png',
             description: 'The data stretches back to 2014, when 5,289 migrants died or went missing.',
             location: {
-                center: [-10.098,45.402],
+                center: [-71.374,26.948],
                 zoom: 1.5,
                 pitch: 0,
                 bearing: 0
@@ -97,9 +97,9 @@ var config = {
             id: 'circles-2019',
             // title: 'An overview',
             // image: './path/to/image/source.png',
-            description: 'In the five years since the refugee crisis captured international attention, some nations have made strides to create a safer and more welcoming climate for migrants. Fefugee policy became a key issue in the 2015 election of Canada, the intended destination for Alan Kurdi and his family. <br><br>As these <span style = "color:#0010F0;">&#9673;</span> circles from 2019 show, instances of dead or missing migrants are mostly concentrated in the same place. <br>Thankfully, these deaths are becoming slightly less frequent; in 2019, roughly, 3,400 migrants were found dead or missing.',
+            description: 'In the five years since the refugee crisis captured international attention, some nations have made strides to create a safer and more welcoming climate for migrants. Refugee policy became a key issue in the 2015 election of Canada, the intended destination for Alan Kurdi and his family. <br><br>As these <span style = "color:#0010F0;">&#9673;</span> circles from 2019 show, instances of dead or missing migrants are mostly concentrated in the same place. <br>Thankfully, these deaths are becoming slightly less frequent; in 2019, roughly, 3,400 migrants were found dead or missing.',
             location: {
-                center: [-10.098,45.402],
+                center: [-71.374,26.948],
                 zoom: 1.5,
                 pitch: 0,
                 bearing: 0
@@ -507,7 +507,7 @@ var config = {
             // image: './path/to/image/source.png',
             description: "While the rest of the world tells a tragic story, the story of the U.S. is both tragic and mysterious. How can a nation as developed as ours fail its migrants so severely?",
             location: {
-                center: [-24.094,2.358],
+                center: [-71.374,26.948],
                 zoom: 1.5,
                 pitch: 0,
                 bearing: 0
@@ -536,7 +536,7 @@ var config = {
             // image: './path/to/image/source.png',
             description: "<p>What can you do to help?<br>The following organizations fight for immigrant safety in the U.S. and abroad:<br></p><ul><li><a target = '_blank' href='https://asylumadvocacy.org/'>Asylum Seeker Advocacy Project</a></li><li><a target = '_blank' href='https://www.raicestexas.org/'>RAICES</a></li><li><a target = '_blank' href='https://las-americas.org/'>Las Americas Immigrant Advocacy Center</a></li><li><a target = '_blank' href='https://www.refugeesinternational.org/'>Refugees International</a></li></ul>",
             location: {
-                center: [-24.094,2.358],
+                center: [-71.374,26.948],
                 zoom: 1.5,
                 pitch: 0,
                 bearing: 0
