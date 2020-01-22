@@ -188,6 +188,11 @@ data %>%
   group_by(region_of_incident, reported_year) %>% 
   summarise(deaths = sum(total_dead_and_missing)) %>% 
   pivot_wider(names_from = reported_year, values_from = deaths) %>% 
-  mutate(percent_change = (`2014`-`2019`)/`2014`)
+  mutate(percent_change = ((`2019`-`2014`)/`2014`)*100)
 
+data %>% 
+  group_by(reported_year) %>% 
+  summarise(deaths = sum(total_dead_and_missing)) %>% 
+  pivot_wider(names_from = reported_year, values_from = deaths) %>% 
+  mutate(percent_change = ((`2019`-`2014`)/`2014`)*100)
 
