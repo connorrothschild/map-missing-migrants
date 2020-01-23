@@ -4,18 +4,42 @@ var config = {
     showMarkers: false,
     theme: 'dark',
     alignment: 'left',
-    title: 'Since 2014, over 34,000 migrants have died or went missing on their journeys to a better life.',
-    subtitle: 'Where?',
-    byline: 'Mapping Missing Migrants. By Connor Rothschild',
+    // title: 'Since 2014, over 34,000 migrants have died or went missing.',
+    // subtitle: 'Where?',
+    // byline: 'Mapping Missing Migrants. By Connor Rothschild',
     footer: 'Source: <a target = "_blank" href = "https://missingmigrants.iom.int">The Missing Migrants Project</a><br>Design: <a target = "_blank" href = "https://connorrothschild.github.io/">Connor Rothschild</a>',
     chapters: [
+        {
+            id: 'title-id',
+            // title: 'An overview',
+            // image: './path/to/image/source.png',
+            description: '<span style="font-size:24px">Since 2014, over 34,000 migrants have died or went missing on their journeys to a better life. <span style="font-weight:700">Where?</span></span><br><br><i>Mapping Missing Migrants</i> | By <a target = "_blank" href = "https://connorrothschild.github.io/">Connor Rothschild</a>',
+            location: {
+                center: [-76.374,26.948],
+                zoom: 1.5,
+                pitch: 0,
+                bearing: 0
+            },
+            onChapterEnter: [
+                {
+                    layer: 'overview-circles',
+                    opacity: .51
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'overview-circles',
+                    opacity: 0
+                }
+            ]
+        },
         {
             id: 'intro-id',
             // title: 'An overview',
             // image: './path/to/image/source.png',
             description: 'The world is facing a migration crisis. In an era of forced exodus and displacement, host governments in developed countries have increasingly turned to turning <em>away</em> migrants. <br>This combination creates a treacherous path for international migrants. Since 2014, nearly 35,000 migrants have died or went missing in their search for a better life.',
             location: {
-                center: [-71.374,26.948],
+                center: [-76.374,26.948],
                 zoom: 1.5,
                 pitch: 0,
                 bearing: 0
@@ -39,7 +63,7 @@ var config = {
             // image: './path/to/image/source.png',
             description: 'The data stretches back to 2014, when 5,289 migrants died or went missing.',
             location: {
-                center: [-71.374,26.948],
+                center: [-76.374,26.948],
                 zoom: 1.5,
                 pitch: 0,
                 bearing: 0
@@ -94,12 +118,48 @@ var config = {
             ]
         },
         {
+            id: 'common-media-continued',
+            // title: 'In the public eye',
+            // image: './images/alan-kurdi.jpg',
+            description: 'Alan Kurdi was one of many.',
+            location: {
+                center: [27.246,37.009],
+                zoom: 7.5,
+                pitch: 0,
+                bearing: 0
+            },
+            onChapterEnter: [
+                {
+                    layer: 'circles-2014',
+                    opacity: 1
+                },
+                {
+                    layer: 'overview-circles',
+                    opacity: .75
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: 'settlement-major-label',
+                    opacity: 1
+                },
+                {
+                    layer: 'circles-2014',
+                    opacity: 0
+                },
+                {
+                    layer: 'overview-circles',
+                    opacity: 0
+                }
+            ]
+        },
+        {
             id: 'circles-2019',
             // title: 'An overview',
             // image: './path/to/image/source.png',
-            description: "In the five years since the refugee crisis captured international attention, some nations have made strides to create a safer and more welcoming climate for migrants. Refugee policy became a key issue in Canada's 2015 election, which was the intended destination for Alan Kurdi and his family. <br><br>As these <span style = 'color:#0010F0;'>&#9673;</span> circles from 2019 show, instances of dead or missing migrants are mostly concentrated in the same place. <br>Thankfully, these deaths are becoming slightly less frequent; in 2019, roughly, 3,400 migrants were found dead or missing.",
+            description: "In the five years since the refugee crisis captured international attention, some nations have made strides to create a safer and more welcoming climate for migrants. Refugee policy became a key issue in Canada's 2015 election, which was the intended destination for Alan Kurdi and his family. <br><br>As these <span style = 'color:#616bff;'>&#9679;</span> circles from 2019 show, instances of dead or missing migrants are mostly concentrated in the same place. <br>Thankfully, these deaths are becoming slightly less frequent; in 2019, roughly 3,400 migrants were found dead or missing (compared to 5,300 in 2014).",
             location: {
-                center: [-71.374,26.948],
+                center: [-76.374,26.948],
                 zoom: 1.5,
                 pitch: 0,
                 bearing: 0
@@ -249,7 +309,7 @@ var config = {
                 },
                 {   
                     layer: 'overview-circles',
-                    opacity: .51
+                    opacity: 0
                 },                
                 {
                     layer: 'deadliest-incident-text',
@@ -270,6 +330,42 @@ var config = {
             ]
         },
         {
+            id: 'mediterranean-drowning',
+            // title: 'Some paths remain more dangerous than others',
+            image: './images/drowning.jpg',
+            description: "Events like these are far too common. In this area, almost all migrant deaths (93%) are attributable to drowning (represented by <span style = 'color:#616bff;'>&#9679;</span>). The international average is 62.7%",
+            location: {
+                center: [14.350,30.65],
+                zoom: 3,
+                pitch: 0,
+                bearing: 0
+        },
+            onChapterEnter: [
+                {
+                    layer: 'drowning-mediterranean',
+                    opacity: .51
+                },
+                {
+                    layer: 'country-label',
+                    opacity: 1
+                },
+            ],
+            onChapterExit: [
+                {
+                    layer: 'overview-circles',
+                    opacity: 0
+                },
+                {
+                    layer: 'country-label',
+                    opacity: 0
+                },
+                {
+                    layer: 'drowning-mediterranean',
+                    opacity: 0
+                }
+            ]
+        },
+        {
             id: 'us-mexico',
             title: 'Closer to home',
             // image: './path/to/image/source.png',
@@ -282,15 +378,23 @@ var config = {
             },
             onChapterEnter: [
                 {
+                    layer: 'overview-circles',
+                    opacity: .51
+                }, 
+                {
                     layer: 'country-label',
                     opacity: 1
-                }, 
+                }
             ],
             onChapterExit: [
                 {
                     layer: 'country-label',
                     opacity: 0
                 }, 
+                {
+                    layer: 'overview-circles',
+                    opacity: 0
+                }
             ]
         },
         {
@@ -298,22 +402,26 @@ var config = {
             image: './images/mexico-over-time.jpg',
             description: 'This region is worth exploring because it has experienced an upsurge in both migration and migrant deaths in the past few years. Since 2014 (the first year data was collected), the region has observed a 62% increase in migrant deaths.  <br>In 2019, 497 migrants died or went missing near the US-Mexico border.',
             location: {
-                center: [-110.76662, 20.836],
-                zoom: 2.66,
+                center: [-112.400, 27.710],
+                zoom: 4.67,
                 pitch: 0,
                 bearing: 0
             },
             onChapterEnter: [
                 {
+                    layer: 'overview-circles',
+                    opacity: .51
+                }, 
+                {
                     layer: 'country-label',
                     opacity: 1
-                }, 
+                }
             ],
             onChapterExit: [
                 {
                     layer: 'country-label',
                     opacity: 0
-                }, 
+                }
             ]
         },
         {
@@ -322,37 +430,63 @@ var config = {
             // image: './path/to/image/source.png',
             description: 'There are concentrations around the border itself. <br>But there are two places—inside the U.S.—which have an abnormal concentration of unaccounted-for migrants.',
             location: {
-                center: [-112.400, 27.710],
-                zoom: 4.67,
-                pitch: 0,
-                bearing: 0
+                center: [-112.400, 26.24],
+                zoom: 5.07,
+                pitch: 60.00,
+                bearing: 16.80
             },
             onChapterEnter: [
                 {
+                    layer: 'fill-extrusion',
+                    opacity: .8
+                },
+                {
                     layer: 'country-label',
                     opacity: 1
-                }, 
+                }
             ],
             onChapterExit: [
                 {
+                    layer: 'fill-extrusion',
+                    opacity: 0
+                },
+                {
                     layer: 'country-label',
                     opacity: 0
-                }, 
+                }   
             ]
         },
         {
-            id: 'us-mexico-two-cities',
+            id: 'us-mexico-two-cities-height',
             // title: 'Closer to Home',
             // image: './path/to/image/source.png',
             description: "In these areas, you'll notice a lot of small individual circles. That means that these deaths were individually recorded. <br>Rather than being the result of drowning or widespread sickness, these deaths were likely experienced alone.",
             location: {
-                center: [-112.400, 27.710],
-                zoom: 4.67,
-                pitch: 0,
-                bearing: 0
+                center: [-112.400, 26.24],
+                zoom: 5.07,
+                pitch: 60.00,
+                bearing: 16.80
             },
-            onChapterEnter: [],
-            onChapterExit: []
+            onChapterEnter: [
+                {
+                    layer: 'fill-extrusion',
+                    opacity: .8
+                },
+                {
+                    layer: 'country-label',
+                    opacity: 1
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'fill-extrusion',
+                    opacity: 0
+                },
+                {
+                    layer: 'country-label',
+                    opacity: 0
+                }
+            ]
         },
         {
             id: 'us-mexico-tucson',
@@ -371,8 +505,8 @@ var config = {
                     opacity: 1
                 }, 
                 {
-                    layer: 'pima-county-shape',
-                    opacity: .7
+                    layer: 'fill-extrusion',
+                    opacity: .8
                 },
                 {
                     layer: 'pima-county-text',
@@ -383,9 +517,9 @@ var config = {
                 {
                     layer: 'state-label',
                     opacity: 0
-                }, 
+                },
                 {
-                    layer: 'pima-county-shape',
+                    layer: 'fill-extrusion',
                     opacity: 0
                 },
                 {
@@ -400,8 +534,8 @@ var config = {
             // image: './path/to/image/source.png',
             description: "The other area of focus is the Southeastern part of Texas. There are deaths scattered throughout, but the greatest concentration is in one place: Brooks County. <br><br>Over <a target = '_blank' href = 'https://www.nytimes.com/2019/04/18/us/mexico-border-deaths.html'>640 migrants' remains</a> have been found in this county since 2009.",
             location: {
-                center: [-99.530, 26.919],
-                zoom: 6.23,
+                center: [-99.136, 26.750],
+                zoom: 6,
                 pitch: 0,
                 bearing: 0
             },
@@ -409,10 +543,10 @@ var config = {
                 {
                     layer: 'state-label',
                     opacity: 1
-                }, 
+                },
                 {
-                    layer: 'brooks-county-shape',
-                    opacity: .7
+                    layer: 'fill-extrusion',
+                    opacity: .8
                 },
                 {
                     layer: 'brooks-county-text',
@@ -425,7 +559,7 @@ var config = {
                     opacity: 0
                 }, 
                 {
-                    layer: 'brooks-county-shape',
+                    layer: 'fill-extrusion',
                     opacity: 0
                 },
                 {
@@ -440,8 +574,8 @@ var config = {
             // image: './path/to/image/source.png',
             description: "If these dead or missing migrants were residents of Brooks County, they would make up 8.9% of its population.",
             location: {
-                center: [-99.530, 26.919],
-                zoom: 6.23,
+                center: [-99.136, 26.750],
+                zoom: 6,
                 pitch: 0,
                 bearing: 0
             },
@@ -451,8 +585,8 @@ var config = {
                     opacity: 1
                 }, 
                 {
-                    layer: 'brooks-county-shape',
-                    opacity: .7
+                    layer: 'fill-extrusion',
+                    opacity: .8
                 },
                 {
                     layer: 'brooks-county-text',
@@ -465,7 +599,7 @@ var config = {
                     opacity: 0
                 }, 
                 {
-                    layer: 'brooks-county-shape',
+                    layer: 'fill-extrusion',
                     opacity: 0
                 },
                 {
@@ -478,7 +612,7 @@ var config = {
             id: 'known-and-unknown',
             title: 'Known and unknown',
             // image: './path/to/image/source.png',
-            description: "There's also something peculiar about these two places: unknown causes of death. <br>Although most recorded deaths share similar causes, such as drowning, these deaths in Texas and Arizona follow different paths.<hr>In this view, <br><span style = 'color:#0FA800;'>&#9673;</span> represent deaths from hyperthermia <br><span style = 'color:#1800E0;'>&#9673;</span> represent deaths from drowning <br><span style = 'color:white;'>&#9673;</span> represent unknown deaths <br><span style = 'color:#A80100;'>&#9673;</span> represent all other causes",
+            description: "There's also something peculiar about these two places: unknown causes of death. <br>Although most recorded deaths share similar causes, such as drowning, these deaths in Texas and Arizona follow different paths.<hr>In this view, <br><span style = 'color:#0FA800;'>&#9679;</span> represent deaths from hyperthermia <br><span style = 'color:#1800E0;'>&#9679;</span> represent deaths from drowning <br><span style = 'color:white;'>&#9679;</span> represent unknown deaths <br><span style = 'color:#A80100;'>&#9679;</span> represent all other causes",
             location: {
                 center: [-112.400, 27.710],
                 zoom: 4.67,
@@ -497,6 +631,10 @@ var config = {
                 {
                     layer: 'known-and-unknown',
                     opacity: 1,
+                },
+                {
+                    layer: 'overview-circles',
+                    opacity: 0
                 }
             ],
             onChapterExit: [
@@ -513,10 +651,10 @@ var config = {
         {
             id: 'known-and-unknown-macro-view',
             image: './images/known-and-unknown.jpg',
-            description: "The US-Mexico border is an outlier in this regard. While the international average for unknown causes of deaths is 3.6%, over 10 times that amount (37%) of US-Mexico migrant deaths have no known cause.",
+            description: "The US-Mexico border is an outlier in this regard. While the international average for unknown causes of deaths is 6.8%, over 5 times that amount (38%) of US-Mexico migrant deaths have no known cause.",
             location: {
-                center: [-71.374,26.948],
-                zoom: 1.5,
+                center: [-91.374,10],
+                zoom: 1.7,
                 pitch: 0,
                 bearing: 0
             },
@@ -542,8 +680,8 @@ var config = {
             // image: './path/to/image/source.png',
             description: "While the rest of the world tells a tragic story, the story of the U.S. is both tragic and mysterious. How can a nation as developed as ours fail its migrants so severely?",
             location: {
-                center: [-71.374,26.948],
-                zoom: 1.5,
+                center: [-91.374,10],
+                zoom: 1.7,
                 pitch: 0,
                 bearing: 0
             },
@@ -568,10 +706,10 @@ var config = {
             id: 'final',
             title: 'Since 2014, over 34,000 migrants have died or went missing on their journey to a better life.',
             // image: './path/to/image/source.png',
-            description: "<p>What can you do to help?<br>The following organizations fight for immigrant safety in the U.S. and abroad:<br></p><ul><li><a target = '_blank' href='https://asylumadvocacy.org/'>Asylum Seeker Advocacy Project</a></li><li><a target = '_blank' href='https://www.raicestexas.org/'>RAICES</a></li><li><a target = '_blank' href='https://las-americas.org/'>Las Americas Immigrant Advocacy Center</a></li><li><a target = '_blank' href='https://www.refugeesinternational.org/'>Refugees International</a></li></ul>",
+            description: "<p>What can you do to help?<br>The following organizations fight for immigrant safety in the U.S. and abroad:<br></p><ul><li><a target = '_blank' href='https://asylumadvocacy.org/'>Asylum Seeker Advocacy Project</a></li><li><a target = '_blank' href='https://las-americas.org/'>Las Americas Immigrant Advocacy Center</a></li><li><a target = '_blank' href='https://www.refugeesinternational.org/'>Refugees International</a></li></ul>",
             location: {
-                center: [-71.374,26.948],
-                zoom: 1.5,
+                center: [-91.374,10],
+                zoom: 1.7,
                 pitch: 0,
                 bearing: 0
             },
