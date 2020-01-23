@@ -11,6 +11,10 @@ cr::set_cr_theme()
 data <- read.csv("../data/data.csv")
 data <- janitor::clean_names(data)
 
+library(showtext)
+font.add("Inter", "Inter-Medium.otf")
+showtext_auto()
+
 sum(data$total_dead_and_missing[data$reported_year == 2018])
 ## THIS NUMBER (above) corresponds with the data presented in the MMP homepage.
 ## It seems fair to use this statistic (total_dead_and_missing) for calculations
@@ -178,10 +182,11 @@ data %>%
                                     colour = "black"), 
     panel.grid.minor = element_line(size = 0, linetype = 'solid',
                                     colour = "black"),
-    title = element_text(colour = "white"),
-    axis.text = element_text(colour = "white"),
+    title = element_text(colour = "white", family = "Inter"),
+    axis.text = element_text(colour = "white", family = "Inter"),
     axis.line = element_line(colour = "white"),
-    axis.ticks = element_line(colour = "white")
+    axis.ticks = element_line(colour = "white"),
+    text = element_text(colour = "white", family = "Inter")
     )
 
 data %>% 
@@ -195,4 +200,37 @@ data %>%
   summarise(deaths = sum(total_dead_and_missing)) %>% 
   pivot_wider(names_from = reported_year, values_from = deaths) %>% 
   mutate(percent_change = ((`2019`-`2014`)/`2014`)*100)
+
+## percent unknown deaths
+data %>% 
+  mutate(unknown = ifelse(grepl("Unknown",data$cause_of_death),1,0)) %>% 
+  group_by(region_of_incident) %>% 
+  summarise(total_unknown = sum(unknown),
+            total_deaths = sum(total_dead_and_missing),
+            percent_unknown = (total_unknown / total_deaths)) %>% 
+  mutate(region_of_incident = reorder(region_of_incident, percent_unknown)) %>% 
+  top_n(6, percent_unknown) %>% 
+  ggplot(aes(x=region_of_incident,y=percent_unknown, label = paste0(round(percent_unknown * 100),"%"))) +
+  geom_col(fill = "#A80100") +
+  coord_flip() +
+  labs(title = "Percentage of Deaths Coded as 'Unknown'",
+       y = element_blank(),
+       x = element_blank()) +
+  geom_text(colour = "white", hjust = 1.1, family = "Inter") +
+  scale_y_continuous(labels = scales::percent, expand = expand_scale(mult = c(0, 0.001))) +
+  theme(
+    plot.background = element_rect(fill = "black"),
+    panel.background = element_rect(fill = "black",
+                                    colour = "black",
+                                    size = 0.5, linetype = "solid"),
+    panel.grid.major = element_line(size = 0, linetype = 'solid',
+                                    colour = "black"), 
+    panel.grid.minor = element_line(size = 0, linetype = 'solid',
+                                    colour = "black"),
+    title = element_text(colour = "white"),
+    axis.text = element_text(colour = "white", family = "Inter"),
+    axis.line = element_line(colour = "white"),
+    axis.ticks = element_line(colour = "white"),
+    text = element_text(colour = "white", family = "Inter")
+  )
 

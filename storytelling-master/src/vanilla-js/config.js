@@ -97,7 +97,7 @@ var config = {
             id: 'circles-2019',
             // title: 'An overview',
             // image: './path/to/image/source.png',
-            description: 'In the five years since the refugee crisis captured international attention, some nations have made strides to create a safer and more welcoming climate for migrants. Refugee policy became a key issue in the 2015 election of Canada, the intended destination for Alan Kurdi and his family. <br><br>As these <span style = "color:#0010F0;">&#9673;</span> circles from 2019 show, instances of dead or missing migrants are mostly concentrated in the same place. <br>Thankfully, these deaths are becoming slightly less frequent; in 2019, roughly, 3,400 migrants were found dead or missing.',
+            description: "In the five years since the refugee crisis captured international attention, some nations have made strides to create a safer and more welcoming climate for migrants. Refugee policy became a key issue in Canada's 2015 election, which was the intended destination for Alan Kurdi and his family. <br><br>As these <span style = 'color:#0010F0;'>&#9673;</span> circles from 2019 show, instances of dead or missing migrants are mostly concentrated in the same place. <br>Thankfully, these deaths are becoming slightly less frequent; in 2019, roughly, 3,400 migrants were found dead or missing.",
             location: {
                 center: [-71.374,26.948],
                 zoom: 1.5,
@@ -211,12 +211,20 @@ var config = {
             // image: './images/two-traffickers.jpg',
             description: 'This incident had been one of many. Seven months prior to the Libyan shipwreck, human traffickers had intentionally sunk another boat with over 500 Syrian, Palestinian, Egyptian, and Sudanese migrants.',
             location: {
-                center: [12.350,34.65],
-                zoom: 5,
+                center: [13.88,33.542],
+                zoom: 7.1,
                 pitch: 0,
                 bearing: 0
         },
             onChapterEnter: [
+                {
+                    layer: 'deadliest-incident-text',
+                    opacity: 0.5
+                },
+                {
+                    layer: 'deadliest-incident-focus',
+                    opacity: 0.5
+                },
                 {
                     layer: 'country-label',
                     opacity: 1
@@ -504,6 +512,33 @@ var config = {
         },
         {
             id: 'known-and-unknown-macro-view',
+            image: './images/known-and-unknown.jpg',
+            description: "The US-Mexico border is an outlier in this regard. While the international average for unknown causes of deaths is 3.6%, over 10 times that amount (37%) of US-Mexico migrant deaths have no known cause.",
+            location: {
+                center: [-71.374,26.948],
+                zoom: 1.5,
+                pitch: 0,
+                bearing: 0
+            },
+            onChapterEnter: [
+                {
+                    layer: 'overview-circles',
+                    opacity: .51,
+                },
+                {
+                    layer: 'known-and-unknown',
+                    opacity: .51,
+                }
+            ],
+            onChapterExit: [
+                {
+                    layer: 'known-and-unknown',
+                    opacity: 0
+                }
+            ]
+        },
+        {
+            id: 'known-and-unknown-macro-final',
             // image: './path/to/image/source.png',
             description: "While the rest of the world tells a tragic story, the story of the U.S. is both tragic and mysterious. How can a nation as developed as ours fail its migrants so severely?",
             location: {
@@ -529,7 +564,6 @@ var config = {
                 }
             ]
         },
-
         {
             id: 'final',
             title: 'Since 2014, over 34,000 migrants have died or went missing on their journey to a better life.',
