@@ -75,7 +75,7 @@ var config = {
                 // },
                 {
                     layer: 'circles-2014',
-                    opacity: 1
+                    opacity: .51
                 }
             ],
             onChapterExit: [
@@ -428,7 +428,7 @@ var config = {
             id: 'us-mexico-two-cities',
             // title: 'Closer to Home',
             // image: './path/to/image/source.png',
-            description: 'There are concentrations around the border itself. <br>But there are two places—inside the U.S.—which have an abnormal concentration of unaccounted-for migrants.',
+            description: 'There are concentrations around the border itself. <br>But there are two places—counties inside the U.S.—which have an abnormal concentration of unaccounted-for migrants.',
             location: {
                 center: [-112.400, 26.24],
                 zoom: 5.07,
@@ -436,6 +436,10 @@ var config = {
                 bearing: 16.80
             },
             onChapterEnter: [
+                {
+                    layer: 'overview-circles',
+                    opacity: .51
+                }, 
                 {
                     layer: 'fill-extrusion',
                     opacity: .8
@@ -446,6 +450,10 @@ var config = {
                 }
             ],
             onChapterExit: [
+                {
+                    layer: 'overview-circles',
+                    opacity: .51
+                }, 
                 {
                     layer: 'fill-extrusion',
                     opacity: 0
@@ -469,6 +477,10 @@ var config = {
             },
             onChapterEnter: [
                 {
+                    layer: 'overview-circles',
+                    opacity: .51
+                }, 
+                {
                     layer: 'fill-extrusion',
                     opacity: .8
                 },
@@ -490,9 +502,9 @@ var config = {
         },
         {
             id: 'us-mexico-tucson',
-            title: 'Southern Arizona',
+            title: 'Pima County',
             // image: './path/to/image/source.png',
-            description: "One of these areas is southern Arizona. Cities such as Tucson and Sierra Vista witness much migration from the US-Mexico border, and much of it leads to treacherous outcomes. Independent NGOs have <a target = '_blank' href = 'https://humaneborders.org/wp-content/uploads/deathmapcumulative_poster_2018.pdf'>estimated that</a>, since 1999, over 3300 migrants have died while crossing the Arizona border. <br><br>The largest concentration is in Pima County. In 2018 alone, the remains of 127 migrants were <a target= '_blank' href = 'https://www.azcentral.com/story/news/politics/border-issues/2019/01/16/remains-127-dead-migrants-recovered-southern-arizona-2018/2575080002/'>given to the Pima County Medical Examiner's Office</a>.",
+            description: "One of these counties is in southern Arizona. Cities such as Tucson and Sierra Vista witness much migration from the US-Mexico border, and much of it leads to treacherous outcomes. Independent NGOs have <a target = '_blank' href = 'https://humaneborders.org/wp-content/uploads/deathmapcumulative_poster_2018.pdf'>estimated that</a>, since 1999, over 3300 migrants have died while crossing the Arizona border. <br><br>The largest concentration is in Pima County. In 2018 alone, the remains of 127 migrants were <a target= '_blank' href = 'https://www.azcentral.com/story/news/politics/border-issues/2019/01/16/remains-127-dead-migrants-recovered-southern-arizona-2018/2575080002/'>given to the Pima County Medical Examiner's Office</a>.",
             location: {
                 center: [-113.439, 32.031],
                 zoom: 6,
@@ -500,6 +512,10 @@ var config = {
                 bearing: 0
             },
             onChapterEnter: [
+                {
+                    layer: 'overview-circles',
+                    opacity: .51
+                }, 
                 {
                     layer: 'state-label',
                     opacity: 1
@@ -541,6 +557,10 @@ var config = {
             },
             onChapterEnter: [
                 {
+                    layer: 'overview-circles',
+                    opacity: .51
+                }, 
+                {
                     layer: 'state-label',
                     opacity: 1
                 },
@@ -581,6 +601,10 @@ var config = {
             },
             onChapterEnter: [
                 {
+                    layer: 'overview-circles',
+                    opacity: .51
+                }, 
+                {
                     layer: 'state-label',
                     opacity: 1
                 }, 
@@ -605,6 +629,10 @@ var config = {
                 {
                     layer: 'brooks-county-text',
                     opacity: 0
+                },                
+                {
+                    layer: 'overview-circles',
+                    opacity: 0
                 }
             ]
         },
@@ -612,7 +640,7 @@ var config = {
             id: 'known-and-unknown',
             title: 'Known and unknown',
             // image: './path/to/image/source.png',
-            description: "There's also something peculiar about these two places: unknown causes of death. <br>Although most recorded deaths share similar causes, such as drowning, these deaths in Texas and Arizona follow different paths.<hr>In this view, <br><span style = 'color:#0FA800;'>&#9679;</span> represent deaths from hyperthermia <br><span style = 'color:#1800E0;'>&#9679;</span> represent deaths from drowning <br><span style = 'color:white;'>&#9679;</span> represent unknown deaths <br><span style = 'color:#A80100;'>&#9679;</span> represent all other causes",
+            description: "There's also something peculiar about these two places: unknown causes of death. <br>Although most recorded deaths share similar causes, such as drowning, these deaths in Texas and Arizona follow different paths.<hr>In this view, <br><span style = 'color:#0FA800;'>&#9679;</span> represent deaths from hyperthermia <br><span style = 'color:#616bff;'>&#9679;</span> represent deaths from drowning <br><span style = 'color:white;'>&#9679;</span> represent unknown deaths <br><span style = 'color:#A80100;'>&#9679;</span> represent all other causes",
             location: {
                 center: [-112.400, 27.710],
                 zoom: 4.67,
@@ -632,10 +660,6 @@ var config = {
                     layer: 'known-and-unknown',
                     opacity: 1,
                 },
-                {
-                    layer: 'overview-circles',
-                    opacity: 0
-                }
             ],
             onChapterExit: [
                 {
@@ -670,15 +694,19 @@ var config = {
             ],
             onChapterExit: [
                 {
+                    layer: 'overview-circles',
+                    opacity: 0
+                },
+                {
                     layer: 'known-and-unknown',
                     opacity: 0
                 }
             ]
         },
         {
-            id: 'known-and-unknown-macro-final',
-            // image: './path/to/image/source.png',
-            description: "While the rest of the world tells a tragic story, the story of the U.S. is both tragic and mysterious. How can a nation as developed as ours fail its migrants so severely?",
+            id: 'known-and-unknown-heatmap',
+            // image: './images/known-and-unknown.jpg',
+            description: "Unknown causes of death are far more prevalent along the US-Mexico border than they are elsewhere.<br><br>While the rest of the world tells a tragic story, the story of the U.S. is both tragic and mysterious. How can a nation as developed as ours fail its migrants so severely?",
             location: {
                 center: [-91.374,10],
                 zoom: 1.7,
@@ -687,26 +715,22 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'overview-circles',
-                    opacity: .51,
-                },
-                {
-                    layer: 'known-and-unknown',
-                    opacity: .51,
+                    layer: 'heatmap-deaths',
+                    opacity: 1
                 }
             ],
             onChapterExit: [
                 {
-                    layer: 'known-and-unknown',
+                    layer: 'heatmap-deaths',
                     opacity: 0
                 }
             ]
         },
         {
             id: 'final',
-            title: 'Since 2014, over 34,000 migrants have died or went missing on their journey to a better life.',
+            //title: 'Since 2014, over 34,000 migrants have died or went missing on their journey to a better life.',
             // image: './path/to/image/source.png',
-            description: "<p>What can you do to help?<br>The following organizations fight for immigrant safety in the U.S. and abroad:<br></p><ul><li><a target = '_blank' href='https://asylumadvocacy.org/'>Asylum Seeker Advocacy Project</a></li><li><a target = '_blank' href='https://las-americas.org/'>Las Americas Immigrant Advocacy Center</a></li><li><a target = '_blank' href='https://www.refugeesinternational.org/'>Refugees International</a></li></ul>",
+            description: '<span style="font-size:24px">Since 2014, over 34,000 migrants have died or went missing on their journeys to a better life.</span><br><hr> What can you do to help?<br>The following organizations fight for immigrant safety in the U.S. and abroad:<br></p><ul><li><a target = "_blank" href="https://asylumadvocacy.org/">Asylum Seeker Advocacy Project</a></li><li><a target = "_blank" href="https://las-americas.org/">Las Americas Immigrant Advocacy Center</a></li><li><a target = "_blank" href="https://www.refugeesinternational.org/">Refugees International</a></li></ul>',
             location: {
                 center: [-91.374,10],
                 zoom: 1.7,
@@ -716,18 +740,18 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'overview-circles',
-                    opacity: .51,
+                    opacity: .51
                 },
                 {
                     layer: 'known-and-unknown',
-                    opacity: 0,
+                    opacity: 0
                 }
             ],
             onChapterExit: [
-                // {
-                //     layer: 'known-and-unknown',
-                //     opacity: 0
-                // }
+                {
+                    layer: 'overview-circles',
+                    opacity: 0
+                }
             ]
         },
     ]

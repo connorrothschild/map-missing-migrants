@@ -205,7 +205,7 @@ data %>%
 ## percent unknown deaths
 data %>% 
   mutate(unknown = ifelse(grepl("Unknown|unknown",data$cause_of_death),total_dead_and_missing,0)) %>% 
-  # group_by(region_of_incident) %>% 
+  group_by(region_of_incident) %>% 
   summarise(total_unknown = sum(unknown),
             total_deaths = sum(total_dead_and_missing),
             percent_unknown = (total_unknown / total_deaths)) %>% 
@@ -276,3 +276,9 @@ data %>%
     text = element_text(colour = "white", family = "Inter")
   )
 
+## International average: 62.7%
+data %>% 
+  mutate(drowning = ifelse(grepl("drowning|Drowning",data$cause_of_death),total_dead_and_missing,0)) %>%
+  summarise(total_drowning = sum(drowning),
+            total_deaths = sum(total_dead_and_missing),
+            percent_drowning = (total_drowning / total_deaths))
