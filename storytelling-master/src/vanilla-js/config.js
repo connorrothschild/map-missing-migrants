@@ -7,7 +7,7 @@ var config = {
     // title: 'Since 2014, over 34,000 migrants have died or went missing.',
     // subtitle: 'Where?',
     // byline: 'Mapping Missing Migrants. By Connor Rothschild',
-    footer: 'Source: <a target = "_blank" href = "https://missingmigrants.iom.int">The Missing Migrants Project</a><br>Design: <a target = "_blank" href = "https://connorrothschild.github.io/">Connor Rothschild</a>',
+    footer: 'Source: <a target = "_blank" href = "https://missingmigrants.iom.int">The Missing Migrants Project</a> | Built with <a target = "_blank" href = "https://www.mapbox.com/">Mapbox</a><br>Design: <a target = "_blank" href = "https://connorrothschild.github.io/">Connor Rothschild</a> | Find the source code <a target = "_blank" href = "https://github.com/connorrothschild/map-missing-migrants">here</a>',
     chapters: [
         {
             id: 'title-id',
@@ -61,7 +61,7 @@ var config = {
             id: 'circles-2014',
             // title: 'An overview',
             // image: './path/to/image/source.png',
-            description: 'The data stretches back to 2014, when 5,289 migrants died or went missing.',
+            description: 'We have data stretching back to 2014, when 5,289 migrants died or went missing.',
             location: {
                 center: [-76.374,26.948],
                 zoom: 1.5,
