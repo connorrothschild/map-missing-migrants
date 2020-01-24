@@ -716,7 +716,7 @@ var config = {
             onChapterEnter: [
                 {
                     layer: 'heatmap-deaths',
-                    opacity: 1
+                    opacity: .8
                 }
             ],
             onChapterExit: [
@@ -730,7 +730,7 @@ var config = {
             id: 'final',
             //title: 'Since 2014, over 34,000 migrants have died or went missing on their journey to a better life.',
             // image: './path/to/image/source.png',
-            description: '<span style="font-size:24px">Since 2014, over 34,000 migrants have died or went missing on their journeys to a better life.</span><br><hr> What can you do to help?<br>The following organizations fight for immigrant safety in the U.S. and abroad:<br></p><ul><li><a target = "_blank" href="https://asylumadvocacy.org/">Asylum Seeker Advocacy Project</a></li><li><a target = "_blank" href="https://las-americas.org/">Las Americas Immigrant Advocacy Center</a></li><li><a target = "_blank" href="https://www.refugeesinternational.org/">Refugees International</a></li></ul>',
+            description: '<span style="font-size:24px">Since 2014, over 34,000 migrants have died or went missing on their journeys to a better life.</span><br><hr> What can you do to help?<br>The following organizations fight for immigrant safety in the U.S. and abroad:<br></p><ul><li><a target = "_blank" href="https://asylumadvocacy.org/">Asylum Seeker Advocacy Project</a></li><li><a target = "_blank" href="https://las-americas.org/">Las Americas Immigrant Advocacy Center</a></li><li><a target = "_blank" href="https://www.refugeesinternational.org/">Refugees International</a></li><li><a target = "_blank" href="https://www.doctorswithoutborders.org/">Doctors Without Borders</a></li></li><li><a target = "_blank" href="https://www.rescue.org/">International Rescue Committee</a></li></ul>',
             location: {
                 center: [-91.374,10],
                 zoom: 1.7,
