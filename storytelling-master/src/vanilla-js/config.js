@@ -13,7 +13,7 @@ var config = {
             id: 'title-id',
             // title: 'An overview',
             // image: './path/to/image/source.png',
-            description: '<span style="font-size:24px">Since 2014, over 34,000 migrants have died or went missing on their journeys to a better life. <span style="font-weight:700">Where?</span></span><br><br><i>Mapping Missing Migrants</i> | By <a target = "_blank" href = "https://connorrothschild.github.io/">Connor Rothschild</a>',
+            description: '<span style="font-size:24px">Since 2014, over 34,000 migrants have died or went missing on their journeys to a better life. <span style="font-weight:700">Where?</span></span><br><br><i>Mapping Missing Migrants</i> | By <a target = "_blank" href = "https://connorrothschild.github.io/">Connor Rothschild</a><br><span style = "color:darkgrey;">(Scroll &#x2913; to explore)</span>',
             location: {
                 center: [-76.374,26.948],
                 zoom: 1.5,
