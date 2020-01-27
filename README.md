@@ -1,3 +1,4 @@
+```
 # Mapping Missing Migrants
 
 A project to explore migrants who have been killed or went missing in their exoduses.
@@ -12,7 +13,7 @@ Guide & Fast Facts:
 
 The data suggests that the Mediterranean is the site where the majority of migrants die or go missing. 
 
-```
+​```
    region_of_incident total_dead_and_missing
    <fct>                               <int>
  1 Mediterranean                       19299
@@ -30,7 +31,7 @@ The data suggests that the Mediterranean is the site where the majority of migra
 13 Central Asia                           52
 14 East Asia                              36
 15 North America                           2
-```
+​```
 
 Of the 34,688 people who have died or went missing since 2014, over 55% of them were lost in the Mediterranean.
 
@@ -42,7 +43,7 @@ This region is worth exploring because it has experienced an upsurge in both mig
 
 In 2019, 497 migrants died or went missing near the US-Mexico border.
 
-```
+​```
   reported_year total_dead_and_missing
           <int>                  <int>
 1          2014                    306
@@ -51,7 +52,7 @@ In 2019, 497 migrants died or went missing near the US-Mexico border.
 4          2017                    417
 5          2018                    442
 6          2019                    497
-```
+​```
 
 There are, unsurprisingly, concentrations around the border itself. 
 
@@ -85,3 +86,4 @@ What can you do to help?<br>The following organizations fight for immigrants' ri
 - [RAICES](https://www.raicestexas.org/)
 - [Las Americas Immigrant Advocacy Center](https://las-americas.org/)
 - [Refugees International](https://www.refugeesinternational.org/)
+```

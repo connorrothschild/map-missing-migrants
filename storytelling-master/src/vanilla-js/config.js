@@ -4,7 +4,7 @@ var config = {
     showMarkers: false,
     theme: 'dark',
     alignment: 'left',
-    // title: 'Since 2014, over 34,000 migrants have died or went missing.',
+    // title: 'Since 2014, over 34,000 migrants have died or gone missing.',
     // subtitle: 'Where?',
     // byline: 'Mapping Missing Migrants. By Connor Rothschild',
     footer: 'Source: <a target = "_blank" href = "https://missingmigrants.iom.int">The Missing Migrants Project</a> | Built with <a target = "_blank" href = "https://www.mapbox.com/">Mapbox</a><br>Design: <a target = "_blank" href = "https://connorrothschild.github.io/">Connor Rothschild</a> | Find the source code <a target = "_blank" href = "https://github.com/connorrothschild/map-missing-migrants">here</a>',
@@ -13,7 +13,7 @@ var config = {
             id: 'title-id',
             // title: 'An overview',
             // image: './path/to/image/source.png',
-            description: '<span style="font-size:24px">Since 2014, over 34,000 migrants have died or went missing on their journeys to a better life. <span style="font-weight:700">Where?</span></span><br><br><i>Mapping Missing Migrants</i> | By <a target = "_blank" href = "https://connorrothschild.github.io/">Connor Rothschild</a><br><span style = "color:darkgrey;">(Scroll &#x2913; to explore)</span>',
+            description: '<span style="font-size:24px">Since 2014, over 34,000 migrants have died or gone missing on their journeys to a better life. <span style="font-weight:700">Where?</span></span><br><br><i>Mapping Missing Migrants</i> | By <a target = "_blank" href = "https://connorrothschild.github.io/">Connor Rothschild</a><br><span style = "color:darkgrey;">(Scroll &#x2913; to explore)</span>',
             location: {
                 center: [-76.374,26.948],
                 zoom: 1.5,
@@ -37,7 +37,7 @@ var config = {
             id: 'intro-id',
             // title: 'An overview',
             // image: './path/to/image/source.png',
-            description: 'The world is facing a migration crisis. In an era of forced exodus and displacement, host governments in developed countries have increasingly turned to turning <em>away</em> migrants. <br>This combination creates a treacherous path for international migrants. Since 2014, nearly 35,000 migrants have died or went missing in their search for a better life.',
+            description: '<strong>The world is facing a migration crisis.</strong> In an era of forced exodus and displacement, host governments in developed countries have increasingly turned to turning <em>away</em> migrants. <br>This combination creates a treacherous path for international migrants. Since 2014, nearly 35,000 migrants have died or gone missing in their search for a better life.',
             location: {
                 center: [-76.374,26.948],
                 zoom: 1.5,
@@ -57,39 +57,39 @@ var config = {
                 }
             ]
         },
-        {
-            id: 'circles-2014',
-            // title: 'An overview',
-            // image: './path/to/image/source.png',
-            description: 'We have data stretching back to 2014, when 5,289 migrants died or went missing.',
-            location: {
-                center: [-76.374,26.948],
-                zoom: 1.5,
-                pitch: 0,
-                bearing: 0
-            },
-            onChapterEnter: [
-                // {
-                //     layer: 'overview-circles',
-                //     opacity: 0
-                // },
-                {
-                    layer: 'circles-2014',
-                    opacity: .51
-                }
-            ],
-            onChapterExit: [
-                {
-                    layer: 'circles-2014',
-                    opacity: 0
-                }
-            ]
-        },
+        // {
+        //     id: 'circles-2014',
+        //     // title: 'An overview',
+        //     // image: './path/to/image/source.png',
+        //     description: 'We have data stretching back to 2014, when 5,289 migrants died or gone missing.',
+        //     location: {
+        //         center: [-76.374,26.948],
+        //         zoom: 1.5,
+        //         pitch: 0,
+        //         bearing: 0
+        //     },
+        //     onChapterEnter: [
+        //         // {
+        //         //     layer: 'overview-circles',
+        //         //     opacity: 0
+        //         // },
+        //         {
+        //             layer: 'circles-2014',
+        //             opacity: .51
+        //         }
+        //     ],
+        //     onChapterExit: [
+        //         {
+        //             layer: 'circles-2014',
+        //             opacity: 0
+        //         }
+        //     ]
+        // },
         {
             id: 'common-media',
             title: 'In the public eye',
             image: './images/alan-kurdi.jpg',
-            description: 'It was during this time of crisis that the international community became exposed to the horrific reality of these migrant deaths, often through images such as this one, which focuses on a three-year-old Syrian refugee named Alan Kurdi. <br>He and his family died in September of 2015 near Bodrum, Turkey. They were on their way to Canada.',
+            description: 'In 2014, the international community became exposed to the horrific reality of these migrant deaths, often through images such as this one, which focuses on a three-year-old Syrian refugee named Alan Kurdi. <br>He and his family died in September of 2015 near Bodrum, Turkey. They were on their way to Canada.',
             location: {
                 center: [27.246,37.009],
                 zoom: 10,
@@ -117,47 +117,48 @@ var config = {
                 }
             ]
         },
-        {
-            id: 'common-media-continued',
-            // title: 'In the public eye',
-            // image: './images/alan-kurdi.jpg',
-            description: 'Alan Kurdi was one of many.',
-            location: {
-                center: [27.246,37.009],
-                zoom: 7.5,
-                pitch: 0,
-                bearing: 0
-            },
-            onChapterEnter: [
-                {
-                    layer: 'circles-2014',
-                    opacity: 1
-                },
-                {
-                    layer: 'overview-circles',
-                    opacity: .75
-                },
-            ],
-            onChapterExit: [
-                {
-                    layer: 'settlement-major-label',
-                    opacity: 1
-                },
-                {
-                    layer: 'circles-2014',
-                    opacity: 0
-                },
-                {
-                    layer: 'overview-circles',
-                    opacity: 0
-                }
-            ]
-        },
+        // {
+        //     id: 'common-media-continued',
+        //     // title: 'In the public eye',
+        //     // image: './images/alan-kurdi.jpg',
+        //     description: 'Alan Kurdi was one of many.',
+        //     location: {
+        //         center: [27.246,37.009],
+        //         zoom: 7.5,
+        //         pitch: 0,
+        //         bearing: 0
+        //     },
+        //     onChapterEnter: [
+        //         {
+        //             layer: 'circles-2014',
+        //             opacity: 1
+        //         },
+        //         {
+        //             layer: 'overview-circles',
+        //             opacity: .75
+        //         },
+        //     ],
+        //     onChapterExit: [
+        //         {
+        //             layer: 'settlement-major-label',
+        //             opacity: 1
+        //         },
+        //         {
+        //             layer: 'circles-2014',
+        //             opacity: 0
+        //         },
+        //         {
+        //             layer: 'overview-circles',
+        //             opacity: 0
+        //         }
+        //     ]
+        // },
         {
             id: 'circles-2019',
             // title: 'An overview',
             // image: './path/to/image/source.png',
-            description: "In the five years since the refugee crisis captured international attention, some nations have made strides to create a safer and more welcoming climate for migrants. Refugee policy became a key issue in Canada's 2015 election, which was the intended destination for Alan Kurdi and his family. <br><br>As these <span style = 'color:#616bff;'>&#9679;</span> circles from 2019 show, instances of dead or missing migrants are mostly concentrated in the same place. <br>Thankfully, these deaths are becoming slightly less frequent; in 2019, roughly 3,400 migrants were found dead or missing (compared to 5,300 in 2014).",
+            description: "Alan Kurdi was one of many. In the five years since the refugee crisis captured international attention, some nations have made strides to create a safer and more welcoming climate for migrants. Refugee policy became a key issue in Canada's 2015 election, which was the intended destination for Alan Kurdi and his family.",
+            //<br><br>As these <span style = 'color:#616bff;'>&#9679;</span> circles from 2019 show, instances of dead or missing migrants are mostly concentrated in the same place. <br>Thankfully, these deaths are becoming slightly less frequent; in 2019, roughly 3,400 migrants were found dead or missing (compared to 5,300 in 2014).",
             location: {
                 center: [-76.374,26.948],
                 zoom: 1.5,
@@ -166,30 +167,38 @@ var config = {
             },
             onChapterEnter: [
                 {
-                    layer: 'circles-2014',
-                    opacity: 1
-                },
-                {
-                    layer: 'circles-2019',
-                    opacity: 1
+                    layer: 'overview-circles',
+                    opacity: .51
                 }
+                // {
+                //     layer: 'circles-2014',
+                //     opacity: 1
+                // },
+                // {
+                //     layer: 'circles-2019',
+                //     opacity: 1
+                // }
             ],
             onChapterExit: [
                 {
-                    layer: 'circles-2019',
-                    opacity: 0
-                },
-                {
-                    layer: 'circles-2014',
+                    layer: 'overview-circles',
                     opacity: 0
                 }
+                // {
+                //     layer: 'circles-2019',
+                //     opacity: 0
+                // },
+                // {
+                //     layer: 'circles-2014',
+                //     opacity: 0
+                // }
             ]
         },
         {
             id: 'mediterranean',
             title: 'Some paths remain more dangerous than others',
             // image: './path/to/image/source.png',
-            description: 'After five years of this crisis and tepid responses from national governments, some paths remain more dangerous than others. The most dangerous place for migrants is the Mediterranean Sea, where Alan Kurdi drowned.<br><br>Of the 34,688 people who have died or went missing since 2014, over 55% of them were lost in the Mediterranean.',
+            description: 'After five years of this crisis and tepid responses from national governments, some paths remain more dangerous than others. The most dangerous place for migrants is the Mediterranean Sea, where Alan Kurdi drowned.<br><br>Of the 34,688 people who have died or gone missing since 2014, over 55% of them were lost in the Mediterranean.',
             location: {
                 center: [14.350,30.65],
                 zoom: 3,
@@ -221,7 +230,7 @@ var config = {
             id: 'mediterranean-focus',
             title: 'The deadliest single incident in the last six years',
             image: './images/two-traffickers.jpg',
-            description: 'This region also includes some of the most horrendous, intentional incidents. On April 18, 2015, two human traffickers intentionally capsized a migrant boat somewhere near the coast of Libya. 750 migrants died of drowning and an additional 252 went missing.<br><br>In total, 1,022 migrants died or went missing—27 survived.',
+            description: 'This region also includes some of the most horrendous, intentional incidents. On April 18, 2015, two human traffickers intentionally capsized a migrant boat somewhere near the coast of Libya. 750 migrants died of drowning and an additional 252 gone missing.<br><br>In total, 1,022 migrants died or gone missing—27 survived.',
             location: {
                 center: [12.350,34.65],
                 zoom: 5,
@@ -400,7 +409,7 @@ var config = {
         {
             id: 'us-mexico-over-time',
             image: './images/mexico-over-time.jpg',
-            description: 'This region is worth exploring because it has experienced an upsurge in both migration and migrant deaths in the past few years. Since 2014 (the first year data was collected), the region has observed a 62% increase in migrant deaths.  <br>In 2019, 497 migrants died or went missing near the US-Mexico border.',
+            description: 'This region is worth exploring because it has experienced an upsurge in both migration and migrant deaths in the past few years. Since 2014 (the first year data was collected), the region has observed a 62% increase in migrant deaths.  <br>In 2019, 497 migrants died or gone missing near the US-Mexico border.',
             location: {
                 center: [-112.400, 27.710],
                 zoom: 4.67,
@@ -728,9 +737,9 @@ var config = {
         },
         {
             id: 'final',
-            //title: 'Since 2014, over 34,000 migrants have died or went missing on their journey to a better life.',
+            //title: 'Since 2014, over 34,000 migrants have died or gone missing on their journey to a better life.',
             // image: './path/to/image/source.png',
-            description: '<span style="font-size:24px">Since 2014, over 34,000 migrants have died or went missing on their journeys to a better life.</span><br><hr> What can you do to help?<br>The following organizations fight for immigrant safety in the U.S. and abroad:<br></p><ul><li><a target = "_blank" href="https://asylumadvocacy.org/">Asylum Seeker Advocacy Project</a></li><li><a target = "_blank" href="https://las-americas.org/">Las Americas Immigrant Advocacy Center</a></li><li><a target = "_blank" href="https://www.refugeesinternational.org/">Refugees International</a></li><li><a target = "_blank" href="https://www.doctorswithoutborders.org/">Doctors Without Borders</a></li></li><li><a target = "_blank" href="https://www.rescue.org/">International Rescue Committee</a></li></ul>',
+            description: '<span style="font-size:24px">Since 2014, over 34,000 migrants have died or gone missing on their journeys to a better life.</span><br><br><span style="font-size:18px"><i>What can you do to help?</i></span><br><br>The following organizations fight for immigrant safety in the U.S. and abroad:<br></p><ul><li><a target = "_blank" href="https://asylumadvocacy.org/">Asylum Seeker Advocacy Project</a></li><li><a target = "_blank" href="https://las-americas.org/">Las Americas Immigrant Advocacy Center</a></li><li><a target = "_blank" href="https://www.refugeesinternational.org/">Refugees International</a></li><li><a target = "_blank" href="https://www.doctorswithoutborders.org/">Doctors Without Borders</a></li></li><li><a target = "_blank" href="https://www.rescue.org/">International Rescue Committee</a></li></ul>',
             location: {
                 center: [-91.374,10],
                 zoom: 1.7,
