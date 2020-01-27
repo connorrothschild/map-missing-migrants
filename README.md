@@ -1,4 +1,3 @@
-```
 # Mapping Missing Migrants
 
 A project to explore migrants who have been killed or went missing in their exoduses.
