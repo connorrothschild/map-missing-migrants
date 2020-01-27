@@ -37,7 +37,7 @@ var config = {
             id: 'intro-id',
             // title: 'An overview',
             // image: './path/to/image/source.png',
-            description: '<strong>The world is facing a migration crisis.</strong> In an era of forced exodus and displacement, host governments in developed countries have increasingly turned to turning <em>away</em> migrants. <br>This combination creates a treacherous path for international migrants. Since 2014, nearly 35,000 migrants have died or gone missing in their search for a better life.',
+            description: '<strong>The world is facing a migration crisis.</strong> In an era of forced exodus and displacement, host governments in developed countries have increasingly turned to turning <em>away</em> migrants. <br><br>This combination creates a treacherous path for international migrants. Since 2014, nearly 35,000 migrants have died or gone missing in their search for a better life.',
             location: {
                 center: [-76.374,26.948],
                 zoom: 1.5,
@@ -278,7 +278,7 @@ var config = {
             id: 'italy-focus',
             title: 'A deadly trend',
             // image: './images/two-traffickers.jpg',
-            description: 'This incident had been one of many. Seven months prior to the Libyan shipwreck, human traffickers had intentionally sunk another boat with over 500 Syrian, Palestinian, Egyptian, and Sudanese migrants.',
+            description: 'This incident had been one of many. Seven months prior to the Libyan shipwreck, human traffickers had intentionally sunk a boat carrying over 500 Syrian, Palestinian, Egyptian, and Sudanese migrants.',
             location: {
                 center: [13.88,33.542],
                 zoom: 7.1,
@@ -437,7 +437,7 @@ var config = {
             id: 'us-mexico-two-cities',
             // title: 'Closer to Home',
             // image: './path/to/image/source.png',
-            description: 'There are concentrations around the border itself. <br>But there are two places—counties inside the U.S.—which have an abnormal concentration of unaccounted-for migrants.',
+            description: "There are concentrations around the border itself. <br>But there are two places—counties inside the U.S.—which have an abnormal concentration of unaccounted-for migrants.<br><br>In these areas, you'll notice a lot of small individual circles. That means that these deaths were individually recorded. <br>Rather than being the result of drowning or widespread sickness, these deaths were likely experienced alone.",
             location: {
                 center: [-112.400, 26.24],
                 zoom: 5.07,
@@ -473,42 +473,42 @@ var config = {
                 }   
             ]
         },
-        {
-            id: 'us-mexico-two-cities-height',
-            // title: 'Closer to Home',
-            // image: './path/to/image/source.png',
-            description: "In these areas, you'll notice a lot of small individual circles. That means that these deaths were individually recorded. <br>Rather than being the result of drowning or widespread sickness, these deaths were likely experienced alone.",
-            location: {
-                center: [-112.400, 26.24],
-                zoom: 5.07,
-                pitch: 60.00,
-                bearing: 16.80
-            },
-            onChapterEnter: [
-                {
-                    layer: 'overview-circles',
-                    opacity: .51
-                }, 
-                {
-                    layer: 'fill-extrusion',
-                    opacity: .8
-                },
-                {
-                    layer: 'country-label',
-                    opacity: 1
-                }
-            ],
-            onChapterExit: [
-                {
-                    layer: 'fill-extrusion',
-                    opacity: 0
-                },
-                {
-                    layer: 'country-label',
-                    opacity: 0
-                }
-            ]
-        },
+        // {
+        //     id: 'us-mexico-two-cities-height',
+        //     // title: 'Closer to Home',
+        //     // image: './path/to/image/source.png',
+        //     description: "In these areas, you'll notice a lot of small individual circles. That means that these deaths were individually recorded. <br>Rather than being the result of drowning or widespread sickness, these deaths were likely experienced alone.",
+        //     location: {
+        //         center: [-112.400, 26.24],
+        //         zoom: 5.07,
+        //         pitch: 60.00,
+        //         bearing: 16.80
+        //     },
+        //     onChapterEnter: [
+        //         {
+        //             layer: 'overview-circles',
+        //             opacity: .51
+        //         }, 
+        //         {
+        //             layer: 'fill-extrusion',
+        //             opacity: .8
+        //         },
+        //         {
+        //             layer: 'country-label',
+        //             opacity: 1
+        //         }
+        //     ],
+        //     onChapterExit: [
+        //         {
+        //             layer: 'fill-extrusion',
+        //             opacity: 0
+        //         },
+        //         {
+        //             layer: 'country-label',
+        //             opacity: 0
+        //         }
+        //     ]
+        // },
         {
             id: 'us-mexico-tucson',
             title: 'Pima County',
