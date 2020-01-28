@@ -117,88 +117,88 @@ var config = {
                 }
             ]
         },
-        // {
-        //     id: 'common-media-continued',
-        //     // title: 'In the public eye',
-        //     // image: './images/alan-kurdi.jpg',
-        //     description: 'Alan Kurdi was one of many.',
-        //     location: {
-        //         center: [27.246,37.009],
-        //         zoom: 7.5,
-        //         pitch: 0,
-        //         bearing: 0
-        //     },
-        //     onChapterEnter: [
-        //         {
-        //             layer: 'circles-2014',
-        //             opacity: 1
-        //         },
-        //         {
-        //             layer: 'overview-circles',
-        //             opacity: .75
-        //         },
-        //     ],
-        //     onChapterExit: [
-        //         {
-        //             layer: 'settlement-major-label',
-        //             opacity: 1
-        //         },
-        //         {
-        //             layer: 'circles-2014',
-        //             opacity: 0
-        //         },
-        //         {
-        //             layer: 'overview-circles',
-        //             opacity: 0
-        //         }
-        //     ]
-        // },
         {
-            id: 'circles-2019',
-            // title: 'An overview',
-            // image: './path/to/image/source.png',
+            id: 'common-media-continued',
+            // title: 'In the public eye',
+            // image: './images/alan-kurdi.jpg',
             description: "Alan Kurdi was one of many. In the five years since the refugee crisis captured international attention, some nations have made strides to create a safer and more welcoming climate for migrants. Refugee policy became a key issue in Canada's 2015 election, which was the intended destination for Alan Kurdi and his family.",
-            //<br><br>As these <span style = 'color:#616bff;'>&#9679;</span> circles from 2019 show, instances of dead or missing migrants are mostly concentrated in the same place. <br>Thankfully, these deaths are becoming slightly less frequent; in 2019, roughly 3,400 migrants were found dead or missing (compared to 5,300 in 2014).",
             location: {
-                center: [-76.374,26.948],
-                zoom: 1.5,
+                center: [27.246,37.009],
+                zoom: 7.5,
                 pitch: 0,
                 bearing: 0
             },
             onChapterEnter: [
                 {
+                    layer: 'circles-2014',
+                    opacity: 1
+                },
+                {
                     layer: 'overview-circles',
-                    opacity: .51
-                }
-                // {
-                //     layer: 'circles-2014',
-                //     opacity: 1
-                // },
-                // {
-                //     layer: 'circles-2019',
-                //     opacity: 1
-                // }
+                    opacity: .75
+                },
             ],
             onChapterExit: [
+                {
+                    layer: 'settlement-major-label',
+                    opacity: 1
+                },
+                {
+                    layer: 'circles-2014',
+                    opacity: 0
+                },
                 {
                     layer: 'overview-circles',
                     opacity: 0
                 }
-                // {
-                //     layer: 'circles-2019',
-                //     opacity: 0
-                // },
-                // {
-                //     layer: 'circles-2014',
-                //     opacity: 0
-                // }
             ]
         },
+        // {
+        //     id: 'circles-2019',
+        //     // title: 'An overview',
+        //     // image: './path/to/image/source.png',
+        //     description: "Alan Kurdi was one of many. In the five years since the refugee crisis captured international attention, some nations have made strides to create a safer and more welcoming climate for migrants. Refugee policy became a key issue in Canada's 2015 election, which was the intended destination for Alan Kurdi and his family.",
+        //     //<br><br>As these <span style = 'color:#616bff;'>&#9679;</span> circles from 2019 show, instances of dead or missing migrants are mostly concentrated in the same place. <br>Thankfully, these deaths are becoming slightly less frequent; in 2019, roughly 3,400 migrants were found dead or missing (compared to 5,300 in 2014).",
+        //     location: {
+        //         center: [-76.374,26.948],
+        //         zoom: 1.5,
+        //         pitch: 0,
+        //         bearing: 0
+        //     },
+        //     onChapterEnter: [
+        //         {
+        //             layer: 'overview-circles',
+        //             opacity: .51
+        //         }
+        //         // {
+        //         //     layer: 'circles-2014',
+        //         //     opacity: 1
+        //         // },
+        //         // {
+        //         //     layer: 'circles-2019',
+        //         //     opacity: 1
+        //         // }
+        //     ],
+        //     onChapterExit: [
+        //         {
+        //             layer: 'overview-circles',
+        //             opacity: 0
+        //         }
+        //         // {
+        //         //     layer: 'circles-2019',
+        //         //     opacity: 0
+        //         // },
+        //         // {
+        //         //     layer: 'circles-2014',
+        //         //     opacity: 0
+        //         // }
+        //     ]
+        // },
         {
             id: 'mediterranean',
             title: 'Some paths remain more dangerous than others',
             // image: './path/to/image/source.png',
-            description: 'After five years of this crisis and tepid responses from national governments, some paths remain more dangerous than others. Although it has become slightly safer in recent years, the most dangerous place for migrants is the Mediterranean Sea, where Alan Kurdi drowned.<br><br><img src="./images/some-paths-alt.jpg" alt="Stacked bar chart depicting changes over time by region" align="middle"><br><br>Of the 34,688 people who have died or gone missing since 2014, over 55% of them were lost in the Mediterranean.',
+            description: 'Despite this, and other tepid responses from national governments, some paths remain more dangerous than others. Although it has become slightly safer in recent years, the most dangerous place for migrants is the Mediterranean Sea, where Alan Kurdi drowned.<br><br><span style = "opacity:1"><img src="./images/some-paths-alt.jpg" alt="Stacked bar chart depicting changes over time by region" align="middle"></span><br><br>Of the 34,688 people who have died or gone missing since 2014, over 55% of them were lost in the Mediterranean.',
             location: {
                 center: [14.350,30.65],
                 zoom: 3,
