@@ -6,7 +6,7 @@ library(lubridate)
 library(Interpol.T)
 library(tidyr) 
 
-cr::set_cr_theme()
+cr::set_cr_theme(font = "lato")
 
 data <- read.csv("../data/data.csv")
 data <- janitor::clean_names(data)
@@ -217,7 +217,7 @@ data %>%
   labs(title = "Percentage of Deaths Coded as 'Unknown'",
        y = element_blank(),
        x = element_blank()) +
-  geom_text(colour = "white", hjust = 1.1, family = "Inter") +
+  geom_text(colour = "white", hjust = 1.1, family = "Inter", size = 5) +
   scale_y_continuous(labels = scales::percent, expand = expand_scale(mult = c(0, 0.001))) +
   theme(
     plot.background = element_rect(fill = "black"),
@@ -228,8 +228,8 @@ data %>%
                                     colour = "black"), 
     panel.grid.minor = element_line(size = 0, linetype = 'solid',
                                     colour = "black"),
-    title = element_text(colour = "white"),
-    axis.text = element_text(colour = "white", family = "Inter"),
+    plot.title = element_text(colour = "white", size = 18),
+    axis.text = element_text(colour = "white", family = "Inter", size = 12),
     axis.line = element_line(colour = "white"),
     axis.ticks = element_line(colour = "white"),
     text = element_text(colour = "white", family = "Inter")
@@ -282,3 +282,46 @@ data %>%
   summarise(total_drowning = sum(drowning),
             total_deaths = sum(total_dead_and_missing),
             percent_drowning = (total_drowning / total_deaths))
+
+top_three_death_countries <- c("North Africa", "Mediterranean")
+
+library(dplyr)
+data_filtered <- data %>% 
+  mutate(region_of_incident = as.character(region_of_incident)) %>% 
+  mutate(region_of_incident = ifelse(region_of_incident %in% top_three_death_countries, region_of_incident, "All other regions")) %>% 
+  filter(reported_year %in% c(2015:2019)) %>% 
+    # region_of_incident %in% top_four_death_countries,
+  group_by(region_of_incident, reported_year) %>% 
+  summarise(count = sum(total_dead_and_missing)) 
+
+data_filtered %>% 
+  ggplot(aes(x = reported_year, y = count, fill = factor(region_of_incident, levels=c("North Africa","Mediterranean", "All other regions")), label = region_of_incident)) +
+  geom_col(position = "fill", show.legend = FALSE) + 
+  geom_text(data=subset(data_filtered, reported_year == 2019),
+            aes(x = reported_year, y = count, 
+                label = ifelse(region_of_incident == "North Africa", glue::glue('{region_of_incident}'), glue::glue('{region_of_incident}\n{count} deaths\n(2019)'))),
+            position = "fill", vjust = 1.5, size = 4, color = "white") +
+  scale_fill_manual(values = c("#46B4D3", "#DB494C","#86AA6D")) +
+  scale_y_continuous(labels = scales::percent, expand = expand_scale(mult = c(0, 0.001))) +
+  labs(x = element_blank(),
+       y = element_blank(),
+       title = "Where Deaths Occur") +
+       # subtitle = "Top four regions") +
+  theme(
+    plot.background = element_rect(fill = "black"),
+    panel.background = element_rect(fill = "black",
+                                    colour = "black",
+                                    size = 0.5, linetype = "solid"),
+    panel.grid.major = element_line(size = 0, linetype = 'solid',
+                                    colour = "black"), 
+    panel.grid.minor = element_line(size = 0, linetype = 'solid',
+                                    colour = "black"),
+    axis.text = element_text(colour = "white", family = "Inter"),
+    axis.line = element_line(colour = "white"),
+    axis.ticks = element_line(colour = "white"),
+    text = element_text(colour = "white", family = "Inter"),
+    # plot.title = element_text(colour = "white", family = "Inter", lineheight = 4),
+    plot.title = element_text(margin = margin(t = 0, r = 0, b = 20, l = 0))
+  ) 
+
+

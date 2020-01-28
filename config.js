@@ -198,7 +198,7 @@ var config = {
             id: 'mediterranean',
             title: 'Some paths remain more dangerous than others',
             // image: './path/to/image/source.png',
-            description: 'After five years of this crisis and tepid responses from national governments, some paths remain more dangerous than others. The most dangerous place for migrants is the Mediterranean Sea, where Alan Kurdi drowned.<br><br>Of the 34,688 people who have died or gone missing since 2014, over 55% of them were lost in the Mediterranean.',
+            description: 'After five years of this crisis and tepid responses from national governments, some paths remain more dangerous than others. Although it has become slightly safer in recent years, the most dangerous place for migrants is the Mediterranean Sea, where Alan Kurdi drowned.<br><br><img src="./images/some-paths-alt.jpg" alt="Stacked bar chart depicting changes over time by region" align="middle"><br><br>Of the 34,688 people who have died or gone missing since 2014, over 55% of them were lost in the Mediterranean.',
             location: {
                 center: [14.350,30.65],
                 zoom: 3,
@@ -601,7 +601,7 @@ var config = {
             id: 'us-mexico-brooks-county-fraction',
             // title: 'Brooks County',
             // image: './path/to/image/source.png',
-            description: "If these dead or missing migrants were residents of Brooks County, they would make up 8.9% of its population.",
+            description: "<strong>If these dead or missing migrants were residents of Brooks County, they would make up 8.9% of its population.</strong>",
             location: {
                 center: [-99.136, 26.750],
                 zoom: 6,
@@ -683,8 +683,8 @@ var config = {
         },
         {
             id: 'known-and-unknown-macro-view',
-            image: './images/known-and-unknown.jpg',
-            description: "The US-Mexico border is an outlier in this regard. While the international average for unknown causes of deaths is 6.8%, over 5 times that amount (38%) of US-Mexico migrant deaths have no known cause.",
+            // image: './images/known-and-unknown.jpg',
+            description: "The US-Mexico border is an outlier in this regard. While the international average for unknown causes of deaths is 6.8%, over 5 times that amount (38%) of US-Mexico migrant deaths have no known cause.<br><br><img src = './images/known-and-unknown.jpg' alt = 'Unknown deaths by region (Mexico is highest), align = 'center'>",
             location: {
                 center: [-91.374,10],
                 zoom: 1.7,
