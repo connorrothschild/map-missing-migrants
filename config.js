@@ -121,7 +121,7 @@ var config = {
             id: 'common-media-continued',
             // title: 'In the public eye',
             // image: './images/alan-kurdi.jpg',
-            description: "Alan Kurdi was one of many. In the five years since the refugee crisis captured international attention, some nations have made strides to create a safer and more welcoming climate for migrants. Refugee policy became a key issue in Canada's 2015 election, which was the intended destination for Alan Kurdi and his family.",
+            description: "<span style = 'font-size:16px;font-weight:bold'>Alan Kurdi was one of many.</span><br><br>In the five years since the refugee crisis captured international attention, some nations have made strides to create a safer and more welcoming climate for migrants. Refugee policy became a key issue in Canada's 2015 election, which was the intended destination for Alan Kurdi and his family.",
             location: {
                 center: [27.246,37.009],
                 zoom: 7.5,
@@ -129,10 +129,10 @@ var config = {
                 bearing: 0
             },
             onChapterEnter: [
-                {
-                    layer: 'circles-2014',
-                    opacity: 1
-                },
+                // {
+                //     layer: 'circles-2014',
+                //     opacity: 1
+                // },
                 {
                     layer: 'overview-circles',
                     opacity: .75
@@ -198,7 +198,8 @@ var config = {
             id: 'mediterranean',
             title: 'Some paths remain more dangerous than others',
             // image: './path/to/image/source.png',
-            description: 'Despite this, and other tepid responses from national governments, some paths remain more dangerous than others. Although it has become slightly safer in recent years, the most dangerous place for migrants is the Mediterranean Sea, where Alan Kurdi drowned.<br><br><span style = "opacity:1"><img src="./images/some-paths-alt.jpg" alt="Stacked bar chart depicting changes over time by region" align="middle"></span><br><br>Of the 34,688 people who have died or gone missing since 2014, over 55% of them were lost in the Mediterranean.',
+            // description: 'Despite this, and other tepid responses from national governments, some paths remain more dangerous than others. Although it has become slightly safer in recent years, the most dangerous place for migrants is the Mediterranean Sea, where Alan Kurdi drowned.<br><br><span style = "opacity:1"><img src="./images/some-paths-alt.jpg" alt="Stacked bar chart depicting changes over time by region" align="middle"></span><br><br>Of the 34,688 people who have died or gone missing since 2014, over 55% of them were lost in the Mediterranean.',
+            description: 'Despite this and other tepid responses from national governments, some paths remain more dangerous than others. Although it has become slightly safer in recent years, the most dangerous place for migrants is the Mediterranean Sea, where Alan Kurdi drowned.<br><br><span style = "opacity:1"><img src="./images/some-paths-bars.jpg" alt="Stacked bar chart depicting changes over time by region" align="middle"></span><br><br>Of the 34,688 people who have died or gone missing since 2014, over 55% of them were lost in the Mediterranean.',
             location: {
                 center: [14.350,30.65],
                 zoom: 3,
@@ -598,7 +599,7 @@ var config = {
             ]
         },
         {
-            id: 'us-mexico-brooks-county-fraction',
+            id: 'us-mexico-brooks-county',
             // title: 'Brooks County',
             // image: './path/to/image/source.png',
             description: "<strong>If these dead or missing migrants were residents of Brooks County, they would make up 8.9% of its population.</strong>",
