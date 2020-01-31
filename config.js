@@ -1,5 +1,5 @@
 var config = {
-    style: 'mapbox://styles/connorrothschild/ck5ighe0z0pog1ilkwzpn17b7/draft',
+    style: 'mapbox://styles/connorrothschild/ck5ighe0z0pog1ilkwzpn17b7',
     accessToken: 'pk.eyJ1IjoiY29ubm9ycm90aHNjaGlsZCIsImEiOiJjazVpZTN5ZXAwZG1mM2ptbnowa3I4ZW4yIn0.vLvH5zQVcMV3ArgDoqNPYA',
     showMarkers: false,
     theme: 'dark',
